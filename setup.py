@@ -12,15 +12,21 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 #  python3 setup.py sdist
 #  twine upload dist/*
 
+_src_folder = 'src'
+_pkg_name = 'unicms_template_italia'
+
 setup(
     name='unicms-template-italia',
-    version='0.2.0',
-    packages=find_packages(),
-    package_data={'unicms_template_italia': ['*.py', ]},
-    data_files=[
-        ('', glob('unicms_template_italia/templates/*.html', recursive=True)),
-    ],
-    include_package_data=True,
+    version='0.2.2',
+    
+    packages=[f"{_pkg_name}"],
+    package_dir={f"{_pkg_name}": f"{_src_folder}/{_pkg_name}"},
+    
+    package_data={f"{_pkg_name}": [i.replace(f'{_src_folder}/{_pkg_name}/', '') 
+                                   for i in glob(f'{_src_folder}/{_pkg_name}/**', 
+                                                 recursive=True)]
+    },
+    
     license='Apache License 2.0',
     description="uniCMS Template based on Bootstrap Italia design",
     long_description=README,
@@ -34,7 +40,7 @@ setup(
         'Framework :: Django :: 2.0',
         'Framework :: Django :: 3.0',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache License 2.0',
+        'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',

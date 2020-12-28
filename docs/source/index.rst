@@ -25,3 +25,9 @@ Bootstrap Italia template for uniCMS
    :caption: Page and Block templates
 
    contents/pages_blocks.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Customization
+
+   contents/customization.md

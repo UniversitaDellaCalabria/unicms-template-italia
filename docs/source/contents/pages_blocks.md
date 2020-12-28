@@ -12,4 +12,6 @@ Block templates
 
 ```blocks/italia_hero_slider.html```
 
+... in progress ...
+
 

@@ -8,7 +8,7 @@ pip install unicms-template-italia
 Setup
 -----
 
-Add these block positions in your ```setting.py```
+Add these block positions in your ```settings.py```
 
 ````
 CMS_TEMPLATE_BLOCK_SECTIONS = (

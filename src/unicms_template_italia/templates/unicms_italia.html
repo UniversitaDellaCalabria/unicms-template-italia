@@ -120,7 +120,7 @@ col-10 offset-2 col-lg-12 offset-lg-0
 
     <!-- Section 1 -->
     {% block section_1 %}
-    {% blocks_in_position position="section-1" as section_1 %}
+    {% blocks_in_position section="section-1" as section_1 %}
     {% if section_1 %}
         {% load_blocks section="1-top-a" as 1_top_a %}
         {% load_blocks section="1-top-b" as 1_top_b %}
@@ -428,7 +428,7 @@ col-10 offset-2 col-lg-12 offset-lg-0
 
     <!-- Section 2 -->
     {% block section_2 %}
-    {% blocks_in_position position="section-2" as section_2 %}
+    {% blocks_in_position section="section-2" as section_2 %}
     {% if section_2 %}
         {% load_blocks section="2-top-a" as 2_top_a %}
         {% load_blocks section="2-top-b" as 2_top_b %}
@@ -736,7 +736,7 @@ col-10 offset-2 col-lg-12 offset-lg-0
 
     <!-- Section 3 -->
     {% block section_3 %}
-    {% blocks_in_position position="section-3" as section_3 %}
+    {% blocks_in_position section="section-3" as section_3 %}
     {% if section_3 %}
         {% load_blocks section="3-top-a" as 3_top_a %}
         {% load_blocks section="3-top-b" as 3_top_b %}

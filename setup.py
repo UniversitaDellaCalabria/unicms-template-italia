@@ -16,7 +16,7 @@ SRC_FOLDER = 'src'
 PKG_NAME = 'unicms_template_italia'
 
 setup(
-    name='unicms-template-italia',
+    name=PKG_NAME,
     version='0.4.2',
 
     packages=[PKG_NAME],

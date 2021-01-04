@@ -17,6 +17,6 @@ def is_mega_menu(item):
     enum_childs = enumerate(childs)
     for index,child in enum_childs:
         if index>0 and child.has_childs(): return True
-        if child.has_childs: with_childs += 1
+        if child.has_childs(): with_childs += 1
         if index>0 and with_childs: return True
     return False

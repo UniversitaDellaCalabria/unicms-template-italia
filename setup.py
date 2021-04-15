@@ -17,16 +17,16 @@ PKG_NAME = 'unicms_template_italia'
 
 setup(
     name=PKG_NAME,
-    version='0.4.6',
+    version='0.4.7',
 
     packages=[PKG_NAME],
     package_dir={PKG_NAME: f"{SRC_FOLDER}/{PKG_NAME}"},
-    
-    package_data={PKG_NAME: [i.replace(f'{SRC_FOLDER}/{PKG_NAME}/', '') 
-                                   for i in glob(f'{SRC_FOLDER}/{PKG_NAME}/**', 
+
+    package_data={PKG_NAME: [i.replace(f'{SRC_FOLDER}/{PKG_NAME}/', '')
+                                   for i in glob(f'{SRC_FOLDER}/{PKG_NAME}/**',
                                                  recursive=True)]
     },
-    
+
     license='Apache License 2.0',
     description="uniCMS Template based on Bootstrap Italia design",
     long_description=README,

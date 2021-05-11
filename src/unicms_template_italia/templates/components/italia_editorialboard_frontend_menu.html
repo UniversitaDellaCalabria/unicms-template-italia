@@ -13,13 +13,13 @@
                 <use xlink:href="{% static 'svg/sprite.svg' %}#it-burger"></use>
             </svg>
             <span class="m-2">
-                {% trans "Hi" %}, <b>{{ request.user.first_name }}</b>
+                {% trans "Hi" %}, <b>{{ request.user.first_name }} {{ request.user.last_name }}</b>
                 {% if preview_mode %} - <b>Preview mode</b>{% endif %}
             </span>
         </div>
     </a>
 
-    <div class="dropdown-menu">
+    <div class="dropdown-menu" style="min-width: 300px">
         <div class="row">
             <div class="col-12">
                 <div class="link-list-wrapper">

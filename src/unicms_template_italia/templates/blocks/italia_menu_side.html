@@ -1,6 +1,9 @@
 {% load i18n %}
 {% load static %}
 
+{% load unicms_menus %}
+
+
 {% if items %}
 <div class="sidebar-wrapper">
     <div class="sidebar-linklist-wrapper">
@@ -9,8 +12,9 @@
                 {% for item in items %}
                     <li>
                         {% if item.get_childs %}
+                        {% load_item_childs item as childs %}
                         <a class="list-item large medium right-icon"
-                           href="#collapse{{ forloop.counter }}"
+                           href="#collapse-{{item.id}}-{{ forloop.counter }}"
                            data-toggle="collapse"
                            aria-expanded="false"
                            aria-controls="collapseOne">
@@ -19,8 +23,8 @@
                                 <use xlink:href="{% static 'svg/sprite.svg' %}#it-expand"></use>
                             </svg>
                         </a>
-                        <ul class="link-sublist collapse" id="collapse{{ forloop.counter }}">
-                            {% for child in item.get_childs %}
+                        <ul class="link-sublist collapse" id="collapse-{{item.id}}-{{ forloop.counter }}">
+                            {% for child in childs %}
                             <li>
                                 <a class="list-item" href="{{ child.link}}">
                                     <span>{{ child.name }} </span>

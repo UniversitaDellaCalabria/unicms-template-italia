@@ -1,6 +1,9 @@
 {% load i18n %}
 {% load static %}
 
+{% load unicms_templates %}
+
+{% settings_value "LOGOUT_URL" as logout_url %}
 
 <div class="nav-item dropdown">
 
@@ -26,7 +29,7 @@
                     <ul class="link-list">
                         {% if not preview_mode %}
                         <li>
-                            <a class="list-item" href="{% url 'admin:index' %}">
+                            <a class="list-item" href="{% url 'unicms_editorial_board:board_base' %}">
                               <svg class="icon icon-md icon-dark">
                                 <use xlink:href="{% static 'svg/sprite.svg' %}#it-settings"></use>
                               </svg>
@@ -66,7 +69,7 @@
                         </li>
                         <hr>
                         <li>
-                            <a class="list-item" href="{% url 'admin:logout' %}">
+                            <a class="list-item" href="{{ logout_url|default_if_none:'logout' }}">
                               <svg class="icon icon-md icon-dark">
                                 <use xlink:href="{% static 'svg/sprite.svg' %}#it-close-circle"></use>
                               </svg>

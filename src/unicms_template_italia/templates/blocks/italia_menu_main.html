@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load static %}
 
-
+{% load unicms_contexts %}
 {% load unicms_template_italia %}
 
 
@@ -30,13 +30,14 @@
                         <div class="menu-wrapper">
                             <ul class="navbar-nav">
                                 {% for item in items %}
+                                {% call obj=item method='link' request=request as link %}
                                 {% is_mega_menu item as is_mega_menu %}
                                 <li class="nav-item
                                            {% if forloop.first %}active{% endif %}
                                            {% if item.has_childs %}dropdown{% endif %}
                                            {% if is_mega_menu %}megamenu{% endif %}">
                                     <a class="nav-link dropdown-toggle"
-                                       href={% if subitem.link %}"{{ subitem.get_link}}"{% else %}"#"{% endif %}
+                                       href={% if item.link %}"{{ link }}"{% else %}"#"{% endif %}
                                        data-toggle="dropdown" aria-expanded="false">
                                        <span>{{ item.name }}</span>
                                        {% if item.get_childs %}
@@ -49,6 +50,7 @@
                                     <div class="dropdown-menu">
                                         <div class="row">
                                             {% for child in item.get_childs %}
+                                                {% call obj=child method='link' request=request as child_link %}
                                                 {% if child.has_childs %}
 
                                                     <!-- If previous item hasn't got childs, close col div -->
@@ -66,14 +68,15 @@
                                                             <ul class="link-list">
                                                                 <li>
                                                                     <b>
-                                                                        <a class="list-item" href="{{ child.link}}">
+                                                                        <a class="list-item" href="{{ child_link }}">
                                                                             <span class="text-dark">{{ child.name }}</span>
                                                                         </a>
                                                                     </b>
                                                                 </li>
                                                                 {% for subchild in child.get_childs %}
+                                                                {% call obj=subchild method='link' request=request as subchild_link %}
                                                                 <li>
-                                                                    <a class="list-item sub" href="{{ subchild.link}}">
+                                                                    <a class="list-item sub" href="{{ subchild_link }}">
                                                                         <span class="text-dark">{{ subchild.name }}</span>
                                                                     </a>
                                                                 </li>
@@ -91,7 +94,7 @@
                                                             <ul class="link-list">
                                                     {% endifchanged %}
                                                                 <li>
-                                                                    <a class="list-item" href="{{ child.link}}">
+                                                                    <a class="list-item" href="{{ child_link}}">
                                                                         <span class="text-dark">{{ child.name }}</span>
                                                                     </a>
                                                                 </li>

@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load static %}
 
+{% load unicms_contexts %}
 {% load unicms_menus %}
 
 
@@ -10,6 +11,7 @@
         <div class="link-list-wrapper">
             <ul class="link-list">
                 {% for item in items %}
+                    {% call obj=item method='link' request=request as link %}
                     <li>
                         {% if item.get_childs %}
                         {% load_item_childs item as childs %}
@@ -25,15 +27,16 @@
                         </a>
                         <ul class="link-sublist collapse" id="collapse-{{item.id}}-{{ forloop.counter }}">
                             {% for child in childs %}
+                            {% call obj=child method='link' request=request as child_link %}
                             <li>
-                                <a class="list-item" href="{{ child.link}}">
+                                <a class="list-item" href="{{ child_link}}">
                                     <span>{{ child.name }} </span>
                                 </a>
                             </li>
                             {% endfor %}
                         </ul>
                         {% else %}
-                        <a class="list-item" href="{{ item.link }}">
+                        <a class="list-item" href="{{ link }}">
                             <span>{{ item.name }} </span>
                         </a>
                         {% endif %}

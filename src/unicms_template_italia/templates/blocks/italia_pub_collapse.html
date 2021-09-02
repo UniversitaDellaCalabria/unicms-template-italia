@@ -31,18 +31,13 @@
 
             {% block collapse_publication_image %}
                 {% if publication.presentation_image %}
-                    <div class="media mb-0">
-                        <img class="align-self-start mr-3 w-25"
-                             src="{{ publication.image_url }}"
-                             alt="{{ publication.title }}">
-                        <div class="media-body">
-                            {{ publication.content|safe }}
-                        </div>
-                    </div>
-                {% else %}
-                    <p class="mb-0">{{ publication.content|safe }}</p>
+                <img class="w-100"
+                     src="{{ publication.image_url }}"
+                     alt="{{ publication.title }}">
                 {% endif %}
             {% endblock collapse_publication_image %}
+
+            <p class="mb-0">{{ publication.content|safe }}</p>
 
             {% if publication.related_links %}
                 <hr>

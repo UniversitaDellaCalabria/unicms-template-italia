@@ -14,7 +14,9 @@
                 data-target="#collapse-{{ id }}-lft"
                 aria-expanded="false"
                 aria-controls="collapse-{{ id }}-lft">
-            {{ publication.title }}
+            {% block collapse_header %}
+                {{ publication.title }}
+            {% endblock collapse_header %}
         </button>
     </div>
     <div id="collapse-{{ id }}-lft"
@@ -26,18 +28,22 @@
                 <p><i>{{ publication.subheading }}</i></p>
                 <hr>
             {% endif %}
-            {% if publication.presentation_image %}
-                <div class="media mb-0">
-                    <img class="align-self-start mr-3 w-25"
-                         src="{{ publication.image_url }}"
-                         alt="{{ publication.title }}">
-                    <div class="media-body">
-                        {{ publication.content|safe }}
+
+            {% block collapse_publication_image %}
+                {% if publication.presentation_image %}
+                    <div class="media mb-0">
+                        <img class="align-self-start mr-3 w-25"
+                             src="{{ publication.image_url }}"
+                             alt="{{ publication.title }}">
+                        <div class="media-body">
+                            {{ publication.content|safe }}
+                        </div>
                     </div>
-                </div>
-            {% else %}
-                <p class="mb-0">{{ publication.content|safe }}</p>
-            {% endif %}
+                {% else %}
+                    <p class="mb-0">{{ publication.content|safe }}</p>
+                {% endif %}
+            {% endblock collapse_publication_image %}
+
             {% if publication.related_links %}
                 <hr>
                 <ul class="pl-0" style="list-style: none">

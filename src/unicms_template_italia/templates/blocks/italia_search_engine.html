@@ -155,8 +155,7 @@
 </div>
 
 <div class="row">
-    <div id="results">
-    </div>
+    <div id="results"></div>
 </div>
 
 <script>
@@ -248,13 +247,14 @@ var search = new Vue({
     template: `
         <div class="col" v-if="newsLoaded == false">
             {% include "loading-jumbo.html" %}
+        </div>
         <div class="col" v-else>
             <div class="" v-if="items">
 
-                <list-panel v-bind:data="items" v-if="items.results"></list-panel>
+                <list-panel v-bind:data="items" v-if="items.count"></list-panel>
 
                 <!--start card-->
-                <div class="card-wrapper card-space"  v-for="item in items.results" :key="item.id">
+                <div class="card-wrapper card-space"  v-for="item in items" :key="item.id">
                     <div class="card card-bg no-after">
                         <div class="card-body">
 
@@ -342,8 +342,12 @@ var search = new Vue({
             this.newsLoaded = false;
             axios
                 .get( this.url + this.get_args)
-                .then(response => this.items = response.data)
-                .then(response => this.newsLoaded = true)
+                .then(response => {
+                    this.items = response.data.results
+                    this.newsLoaded = true
+                    this.scrollToTop()
+                    console.log(this.items)
+                })
                 .then(response => this.scrollToTop())
         },
         scrollToTop () {

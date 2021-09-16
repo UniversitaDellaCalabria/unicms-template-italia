@@ -47,7 +47,7 @@
                             {% with item.get_links as item_links %}
                                 {% if item_links %}
                                 <div class="it-btn-container">
-                                    {% for link in item.get_links %}
+                                    {% for link in item_links %}
                                     <a class="btn btn-sm btn-secondary" href="{{ link.url }}">
                                         {{ link.get_title }}
                                     </a>

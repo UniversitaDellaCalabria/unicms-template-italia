@@ -1,1 +1,1 @@
-design-django-theme==1.4.1.2
+design-django-theme

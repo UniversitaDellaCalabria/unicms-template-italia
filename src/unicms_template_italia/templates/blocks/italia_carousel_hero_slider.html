@@ -5,6 +5,7 @@
 
 {% random_id as id %}
 
+
 {% if carousel_items %}
 <div id="italia_carousel_{{ id }}" class="owl-carousel owl-theme">
 
@@ -43,13 +44,17 @@
                                 {{ item.description }}
                             </p>
                             {% endif %}
-                            {% for link in item.get_links %}
-                            <div class="it-btn-container">
-                                <a class="btn btn-sm btn-secondary" href="{{ link.url }}">
-                                    {{ link.get_title }}
-                                </a>
-                            </div>
-                            {% endfor %}
+                            {% with item.get_links as item_links %}
+                                {% if item_links %}
+                                <div class="it-btn-container">
+                                    {% for link in item.get_links %}
+                                    <a class="btn btn-sm btn-secondary" href="{{ link.url }}">
+                                        {{ link.get_title }}
+                                    </a>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            {% endwith %}
                         </div>
                     </div>
                 </div>

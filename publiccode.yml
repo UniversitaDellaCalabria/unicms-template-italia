@@ -1,0 +1,99 @@
+# This repository adheres to the publiccode.yml standard by including this
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '0.2'
+categories:
+  - content-management
+  - website-builder
+  - web-collaboration
+dependsOn:
+  open:
+    - name: Python
+      optional: false
+      version: ''
+      versionMax: ''
+      versionMin: ''
+    - name: Django
+      optional: false
+      version: ''
+      versionMax: ''
+      versionMin: ''
+description:
+  it:
+    documentation: 'https://unicms-template-italia.readthedocs.io/en/latest/'
+    features:
+      - >-
+        Bootstrap Italia template for uniCMS
+    genericName: applicazione web
+    longDescription: >
+      Template for uniCMS based on Bootstrap Italia
+      (https://italia.github.io/bootstrap-italia/).
+
+      It provides an interface compliant with the P.A. standards and
+      provides a set of templates for the construction of CMS blocks
+      that integrate the most used graphic components
+      (hero banner, carousel, card, etc ...).
+
+      It inherits all the potential and features of the basic library
+      by providing by default an interface that respects the guidelines
+      provided by AgID for the web.
+
+      The entire code is open source and therefore licensed under
+      the Apache 2.0.
+    screenshots:
+    shortDescription: >-
+      Bootstrap Italia template for uniCMS
+developmentStatus: stable
+intendedAudience:
+  scope:
+    - culture
+    - education
+    - government
+    - research
+    - society
+    - sport
+    - tourism
+it:
+  conforme:
+    gdpr: true
+    lineeGuidaDesign: true
+    misureMinimeSicurezza: true
+    modelloInteroperabilita: false
+  countryExtensionVersion: '0.2'
+  piattaforme:
+    anpr: false
+    cie: false
+    pagopa: false
+    spid: false
+  riuso:
+    codiceIPA: unical
+landingURL: 'https://github.com/UniversitaDellaCalabria/unicms-template-italia'
+legal:
+  authorsFile: >-
+    https://github.com/UniversitaDellaCalabria/unicms-template-italia/blob/main/AUTHORS
+  license: Apache-2.0
+  mainCopyrightOwner: Università della Calabria
+localisation:
+  availableLanguages:
+    - en
+  localisationReady: true
+maintenance:
+  contacts:
+    - affiliation: unical.it
+      email: francesco.filicetti@unical.it
+      name: Francesco Filicetti
+    - email: giuseppe.demarco@unical.it
+      name: Giuseppe De Marco
+  type: internal
+name: Bootstrap Italia template for uniCMS
+platforms:
+  - linux
+  - web
+releaseDate: '2021-10-15'
+roadmap: 'https://github.com/UniversitaDellaCalabria/unicms-template-italia/issues'
+softwareType: standalone/web
+softwareVersion: v0.6.6
+url: 'https://github.com/UniversitaDellaCalabria/unicms-template-italia'
+usedBy:
+  - Università della Calabria - https://www.unical.it

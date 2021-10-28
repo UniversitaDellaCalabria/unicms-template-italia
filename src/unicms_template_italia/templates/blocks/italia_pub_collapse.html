@@ -7,7 +7,7 @@
 
 
 <div id="collapseDiv-{{ id }}-lft"
-     class="collapse-div collapse-left-icon"
+     class="collapse-div {% block collapse_icon %}collapse-left-icon{% endblock collapse_icon %}"
      role="tablist">
     <div class="collapse-header" id="heading-{{ id }}-lft">
         <button data-toggle="collapse"

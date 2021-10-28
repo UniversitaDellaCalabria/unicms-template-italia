@@ -85,7 +85,7 @@ maintenance:
     - email: giuseppe.demarco@unical.it
       name: Giuseppe De Marco
   type: internal
-name: Bootstrap Italia template for uniCMS
+name: uniCMS - Bootstrap Italia template
 platforms:
   - linux
   - web

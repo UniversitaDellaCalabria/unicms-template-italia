@@ -32,8 +32,9 @@
             {% block collapse_publication_image %}
                 {% if publication.presentation_image %}
                 <img class="w-100"
-                     src="{{ publication.image_url }}"
-                     alt="{{ publication.title }}">
+                     src="{{ publication.image_main_url }}"
+                     title="{{ publication.presentation_image.title }}"
+                     alt="{{ publication.presentation_image.description }}">
                 {% endif %}
             {% endblock collapse_publication_image %}
 

@@ -9,11 +9,12 @@
 
 {% block collapse_header %}
 <div class="row">
-    {% if publication.presentation_image %}
+    {% if publication.image_url %}
     <div class="col-1">
         <img class="mw-100"
              src="{{ publication.image_url }}"
-             alt="{{ publication.title }}">
+             title="{{ publication.image_title }}"
+             alt="{{ publication.image_description }}">
     </div>
     {% endif %}
     <div class="col m-auto">

@@ -1,6 +1,10 @@
+{% load unicms_templates %}
+
+{% random_id as id %}
+
 {% if collection.get_items %}
 <div class="it-carousel-wrapper it-carousel-landscape-abstract-two-cols it-full-carousel">
-    <div class="it-carousel-all owl-carousel it-img-card it-big-img">
+    <div class="it-carousel-all {% block carousel-class %}{% endblock carousel-class %} owl-carousel it-img-card it-big-img">
         {% for item in collection.get_items %}
         <div class="it-single-slide-wrapper">
             <div class="card-wrapper">
@@ -20,4 +24,8 @@
         {% endfor %}
     </div>
 </div>
+
+{% block slider_custom %}
+{% endblock slider_custom %}
+
 {% endif %}

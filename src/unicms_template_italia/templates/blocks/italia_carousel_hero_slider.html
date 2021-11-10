@@ -5,7 +5,6 @@
 
 {% random_id as id %}
 
-
 {% if carousel_items %}
 <div id="italia_carousel_{{ id }}" class="owl-carousel owl-theme">
 
@@ -17,9 +16,17 @@
             <div class="img-responsive-wrapper">
                 <div class="img-responsive">
                     <div class="img-wrapper">
-                        <img src="{{ item.image.file.url }}"
-                             title="{{ item.image.name }}"
-                             alt="{{ item.image.name }}">
+                        <picture>
+                            {% if item.mobile_image %}
+                            <source srcset="{{ item.mobile_image.file.url }}"
+                                    media="(max-width: 767px)"
+                                    title="{{ item.mobile_image.name }}"
+                                    alt="{{ item.mobile_image.description }}">
+                            {% endif %}
+                            <img srcset="{{ item.image.file.url }}"
+                                 title="{{ item.image.name }}"
+                                 alt="{{ item.image.description }}">
+                        </picture>
                     </div>
                 </div>
             </div>

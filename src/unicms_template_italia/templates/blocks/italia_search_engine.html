@@ -223,13 +223,13 @@ Vue.component('list-panel', {
                     <div class="col w-50" v-if="data.count">
                       <div class="float-right">
                       <span>
-                          <a class="" style="color:#050b12;" v-if="data.page_number > 1" @click="search.prevPage()">
+                          <a class="" style="color:#050b12;" v-if="data.page > 1" @click="search.prevPage()">
                               <span class="sr-only"> {% trans "Page" %} </span> &lt; <small>{% trans "Previous" %}</small>
                           </a>
                       </span>
 
-                      <span class="mr-2 ml-2" >[[ data.page_number ]] / <b>[[ data.total_pages ]]</b></span>
-                          <a class="" style="color:#050b12;" @click="search.nextPage()" v-if="data.page_number < data.total_pages">
+                      <span class="mr-2 ml-2" >[[ data.page ]] / <b>[[ data.total_pages ]]</b></span>
+                          <a class="" style="color:#050b12;" @click="search.nextPage()" v-if="data.page < data.total_pages">
                               <span class="sr-only"><small>{% trans "Page" %} </span>{% trans "Next" %} &gt;</small>
                           </a>
                       </div>
@@ -371,16 +371,16 @@ var search = new Vue({
             this.get_args = base_args;
         },
         nextPage () {
-            let num = this.items.page_number + 1;
+            let num = this.items.page + 1;
             let sep = '';
             if (this.get_args) sep = '&'
-            this.update_args(sep + 'page_number=' + num);
+            this.update_args(sep + 'page=' + num);
         },
         prevPage () {
-            let num = this.items.page_number - 1;
+            let num = this.items.page - 1;
             let sep = '';
             if (this.get_args) sep = '&'
-            this.update_args(sep + 'page_number=' + num);
+            this.update_args(sep + 'page=' + num);
         },
     }
 })

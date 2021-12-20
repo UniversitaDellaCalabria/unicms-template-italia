@@ -246,7 +246,10 @@ var search = new Vue({
     el: '#results',
     template: `
         <div class="col" v-if="newsLoaded == false">
-            {% include "loading-jumbo.html" %}
+            <div class="progress progress-indeterminate my-3">
+                <span class="sr-only">{% trans "Loading data" %}</span>
+                <div class="progress-bar" role="progressbar"></div>
+            </div>
         </div>
         <div class="col" v-else>
             <div class="" v-if="items">
@@ -281,8 +284,9 @@ var search = new Vue({
                                     <span class="small text-muted mb-2">[[ item.indexed|formatDate ]]</span>
             -->
                                     <p><b>[[ item.title ]]</b></p>
-                                    <p>[[ item.heading | truncate(448) ]]</p>
-
+                                    <p v-if="item.heading">
+                                        [[ item.heading | truncate(448) ]]
+                                    </p>
                                     <div class="mt-2">
                                       <ul class="list-unstyled">
                                         <li v-for="url in item.urls">

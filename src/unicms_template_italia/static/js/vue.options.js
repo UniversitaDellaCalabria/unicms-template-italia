@@ -16,7 +16,7 @@ Vue.filter('formatDate', function(value) {
     const offsetMs = dt.getTimezoneOffset() * 60 * 1000;
     const dateLocal = new Date(dt.getTime() - offsetMs);
     const str = dateLocal.toISOString().slice(0, 19).replace(/-/g, "/").replace("T", " ");
-    return str
+    return str.slice(0,-3)
   }
 });
 

@@ -3,6 +3,7 @@
 
 
 {% load i18n %}
+{% load static %}
 
 <!-- From app django-sass-processor -->
 {% if debug %}
@@ -1048,6 +1049,23 @@ col-10 offset-2 col-lg-12 offset-lg-0
     {% endblock section_3 %}
     <!-- end Section 3 -->
 
+    {% comment %}
+    <div class="cookiebar">
+        <p>{% trans "Questo sito utilizza cookie tecnici, analytics e di terze parti." %}
+           <br>
+           {% trans "Proseguendo nella navigazione accetti l’utilizzo dei cookie." %}
+        </p>
+        <div class="cookiebar-buttons">
+            <a href="#" class="cookiebar-btn">
+                {% trans "Preferenze" %} <span class="sr-only">cookies</span>
+            </a>
+            <button data-accept="cookiebar" class="cookiebar-btn cookiebar-confirm">
+                {% trans "Accetto" %}<span class="sr-only"> i cookies</span>
+            </button>
+        </div>
+    </div>
+    {% endcomment %}
+
     <a href="#" aria-hidden="true"
        data-attribute="back-to-top"
        class="back-to-top back-to-top-small">
@@ -1055,5 +1073,6 @@ col-10 offset-2 col-lg-12 offset-lg-0
             <use xlink:href="{% static 'svg/sprite.svg' %}#it-arrow-up"></use>
         </svg>
     </a>
+
 {% endblock container %}
 <!-- end Container -->

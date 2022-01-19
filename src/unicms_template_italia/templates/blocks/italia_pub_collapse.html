@@ -32,7 +32,7 @@
             {% block collapse_publication_image %}
                 {% if publication.presentation_image %}
                 <img class="w-100"
-                     src="{{ publication.image_main_url }}"
+                     src="{{ publication.presentation_image.get_media_path }}"
                      title="{{ publication.presentation_image.title }}"
                      alt="{{ publication.presentation_image.description }}">
                 {% endif %}

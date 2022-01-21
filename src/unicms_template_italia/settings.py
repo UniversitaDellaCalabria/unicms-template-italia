@@ -105,3 +105,14 @@ CMS_TEMPLATE_BLOCK_SECTIONS = (
                                 )
                                ),
                               )
+
+
+# SOCIAL_SHARE_ENDPOINTS
+TWITTER_ENDPOINT = 'https://twitter.com/intent/tweet?text='
+FACEBOOK_ENDPOINT = 'https://www.facebook.com/sharer/sharer.php?u='
+GPLUS_ENDPOINT = 'https://plus.google.com/share?url='
+MAIL_ENDPOINT = 'mailto:?body='
+LINKEDIN_ENDPOINT = 'https://www.linkedin.com/shareArticle?mini=true&url='
+TELEGRAM_ENDPOINT = 'https://t.me/share/url?text=%s&url=%s'
+WHATSAPP_ENDPOINT = 'https://api.whatsapp.com/send?text='
+PINTEREST_ENDPOINT = 'https://www.pinterest.com/pin/create/button/?url='

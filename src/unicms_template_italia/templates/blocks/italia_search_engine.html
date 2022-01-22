@@ -21,14 +21,15 @@
                 <div class="card-body">
                     <div class="form-group">
                         <div class="input-group">
-                            <label for="search">
+                            <label for="search_input">
                                 {% trans 'Write words and "phrases" that you are looking for' %}
                                 </label>
                             <input
                                 type="text"
                                 class="form-control"
-                                id="search"
-                                name="search">
+                                id="search_input"
+                                name="search_input"
+                                value="{{ request.GET.search }}">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <svg class="icon icon-sm icon-muted">
@@ -163,7 +164,7 @@ function get_form_paramenters(){
     let dict = {};
 
     // search
-    let search = document.getElementById('search').value
+    let search = document.getElementById('search_input').value
     if (search) dict['search'] = search
 
     // categories
@@ -333,7 +334,8 @@ var search = new Vue({
     mounted () {
         this.set_args_from_url();
         this.set_initial_field_value();
-        window.addEventListener("keypress", function(e) {
+        let search_input = document.getElementById("search_input");
+        search_input.addEventListener("keypress", function(e) {
             // console.log(e.keyCode);
             if (e.keyCode == 13) {
                 search.update_args();

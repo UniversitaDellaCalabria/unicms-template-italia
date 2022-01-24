@@ -3,6 +3,8 @@
 {% random_id as id %}
 
 {% if collection.get_items %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
 <div class="it-carousel-wrapper it-carousel-landscape-abstract-two-cols it-full-carousel">
     <div class="it-carousel-all {% block carousel-class %}{% endblock carousel-class %} owl-carousel it-img-card it-big-img">
         {% for item in collection.get_items %}
@@ -12,9 +14,11 @@
                     <div class="img-responsive-wrapper">
                         <div class="img-responsive">
                             <div class="img-wrapper">
-                                <img src="{{ item.media.get_media_path }}"
-                                     title="{{ item.media.title }}"
-                                     alt="{{ item.media.description }}">
+                                <a href="{{ item.media.get_media_path }}" data-lightbox="{{ id }}_gallery" aria-label="{{ item.media.title }}">
+                                    <img src="{{ item.media.get_media_path }}"
+                                         title="{{ item.media.title }}"
+                                         alt="{{ item.media.description }}">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -25,6 +29,7 @@
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 {% block slider_custom %}
 {% endblock slider_custom %}
 

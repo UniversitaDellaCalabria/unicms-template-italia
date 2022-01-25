@@ -47,6 +47,6 @@ setup(
     ],
     install_requires=[
         'django>=2.0,<4.0',
-        'design-django-theme==1.4.4'
+        'design-django-theme'
     ],
 )

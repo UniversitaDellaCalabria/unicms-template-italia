@@ -146,7 +146,15 @@ col-10 offset-2 col-lg-12 offset-lg-0
         {% load_blocks section="1-center-top-b" as 1_center_top_b %}
         {% load_blocks section="1-center-top-c" as 1_center_top_c %}
 
+        {% load_blocks section="1-center-mid-top-a" as 1_center_mid_top_a %}
+        {% load_blocks section="1-center-mid-top-b" as 1_center_mid_top_b %}
+        {% load_blocks section="1-center-mid-top-c" as 1_center_mid_top_c %}
+
         {% load_blocks section="1-center-content" as 1_center_content %}
+
+        {% load_blocks section="1-center-mid-bottom-a" as 1_center_mid_bottom_a %}
+        {% load_blocks section="1-center-mid-bottom-b" as 1_center_mid_bottom_b %}
+        {% load_blocks section="1-center-mid-bottom-c" as 1_center_mid_bottom_c %}
 
         {% load_blocks section="1-center-bottom-a" as 1_center_bottom_a %}
         {% load_blocks section="1-center-bottom-b" as 1_center_bottom_b %}
@@ -218,7 +226,7 @@ col-10 offset-2 col-lg-12 offset-lg-0
                     <!-- end Middle Top -->
 
                     <!-- Blocks in center positions -->
-                    {% if 1_center_top_a or 1_center_top_b or 1_center_top_c or 1_center_content or 1_center_bottom_a or 1_center_bottom_b or 1_center_bottom_c %}
+                    {% if 1_center_top_a or 1_center_top_b or 1_center_top_c or 1_center_mid_top_a or 1_center_mid_top_b or 1_center_mid_top_c or 1_center_content or 1_center_mid_bottom_a or 1_center_mid_bottom_b or 1_center_mid_bottom_c or 1_center_bottom_a or 1_center_bottom_b or 1_center_bottom_c %}
 
                         <!-- Blocks in left column -->
                         {% if 1_left_a or 1_left_b %}
@@ -275,6 +283,30 @@ col-10 offset-2 col-lg-12 offset-lg-0
                                 {% endif %}
                             </div>
                             {% endif %}
+                            <!-- END Center top -->
+
+                            <!-- Center mid-top -->
+                            {% if 1_center_mid_top_a or 1_center_mid_top_b or 1_center_top_c %}
+                            <div class="row">
+                                {% if 1_center_mid_top_a and 1_center_mid_top_b and 1_center_mid_top_c %}
+                                    <div class="{% block 1_center_mid_top_abc_a %}col-12 col-md-4{% endblock %}">{{ 1_center_mid_top_a }}</div>
+                                    <div class="{% block 1_center_mid_top_abc_b %}col-12 col-md-4{% endblock %}">{{ 1_center_mid_top_b }}</div>
+                                    <div class="{% block 1_center_mid_top_abc_c %}col-12 col-md-4{% endblock %}">{{ 1_center_mid_top_c }}</div>
+                                {% elif 1_center_mid_top_a and 1_center_mid_top_b %}
+                                    <div class="{% block 1_center_mid_top_ab_a %}col-12 col-md-8{% endblock %}">{{ 1_center_mid_top_a }}</div>
+                                    <div class="{% block 1_center_mid_top_ab_b %}col-12 col-md-4{% endblock %}">{{ 1_center_mid_top_b }}</div>
+                                {% elif 1_center_mid_top_a and 1_center_mid_top_c %}
+                                    <div class="{% block 1_center_mid_top_ac_a %}col-12 col-md-6{% endblock %}">{{ 1_center_mid_top_a }}</div>
+                                    <div class="{% block 1_center_mid_top_ac_c %}col-12 col-md-6{% endblock %}">{{ 1_center_mid_top_c }}</div>
+                                {% elif 1_center_mid_top_b and 1_center_mid_top_c %}
+                                    <div class="{% block 1_center_mid_top_bc_b %}col-12 col-md-4{% endblock %}">{{ 1_center_mid_top_b }}</div>
+                                    <div class="{% block 1_center_mid_top_bc_c %}col-12 col-md-8{% endblock %}">{{ 1_center_mid_top_c }}</div>
+                                {% else %}
+                                    <div class="col-12">{{ 1_center_mid_top_a }}{{ 1_center_mid_top_b }}{{ 1_center_mid_top_c }}</div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <!-- END Center mid-top -->
 
                             <!-- Center content -->
                             {% if 1_center_content %}
@@ -284,6 +316,30 @@ col-10 offset-2 col-lg-12 offset-lg-0
                                 </div>
                             </div>
                             {% endif %}
+                            <!-- END Center content -->
+
+                            <!-- Center mid-bottom -->
+                            {% if 1_center_mid_bottom_a or 1_center_mid_bottom_b or 1_center_mid_bottom_c %}
+                            <div class="row">
+                                {% if 1_center_mid_bottom_a and 1_center_mid_bottom_b and 1_center_mid_bottom_c %}
+                                    <div class="{% block 1_center_mid_bottom_abc_a %}col-12 col-md-4{% endblock %}">{{ 1_center_mid_bottom_a }}</div>
+                                    <div class="{% block 1_center_mid_bottom_abc_b %}col-12 col-md-4{% endblock %}">{{ 1_center_mid_bottom_b }}</div>
+                                    <div class="{% block 1_center_mid_bottom_abc_c %}col-12 col-md-4{% endblock %}">{{ 1_center_mid_bottom_c }}</div>
+                                {% elif 1_center_mid_bottom_a and 1_center_mid_bottom_b %}
+                                    <div class="{% block 1_center_mid_bottom_ab_a %}col-12 col-md-8{% endblock %}">{{ 1_center_mid_bottom_a }}</div>
+                                    <div class="{% block 1_center_mid_bottom_ab_b %}col-12 col-md-4{% endblock %}">{{ 1_center_mid_bottom_b }}</div>
+                                {% elif 1_center_mid_bottom_a and 1_center_mid_bottom_c %}
+                                    <div class="{% block 1_center_mid_bottom_ac_a %}col-12 col-md-6{% endblock %}">{{ 1_center_mid_bottom_a }}</div>
+                                    <div class="{% block 1_center_mid_bottom_ac_c %}col-12 col-md-6{% endblock %}">{{ 1_center_mid_bottom_c }}</div>
+                                {% elif 1_center_mid_bottom_b and 1_center_mid_bottom_c %}
+                                    <div class="{% block 1_center_mid_bottom_bc_b %}col-12 col-md-4{% endblock %}">{{ 1_center_mid_bottom_b }}</div>
+                                    <div class="{% block 1_center_mid_bottom_bc_c %}col-12 col-md-8{% endblock %}">{{ 1_center_mid_bottom_c }}</div>
+                                {% else %}
+                                    <div class="col-12">{{ 1_center_mid_bottom_a }}{{ 1_center_mid_bottom_b }}{{ 1_center_mid_bottom_c }}</div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <!-- END Center mid-bottom -->
 
                             <!-- Center bottom -->
                             {% if 1_center_bottom_a or 1_center_bottom_b or 1_center_bottom_c %}
@@ -306,6 +362,7 @@ col-10 offset-2 col-lg-12 offset-lg-0
                                 {% endif %}
                             </div>
                             {% endif %}
+                            <!-- END Center bottom -->
 
                         </div>
                         <!-- End Center column -->
@@ -454,7 +511,15 @@ col-10 offset-2 col-lg-12 offset-lg-0
         {% load_blocks section="2-center-top-b" as 2_center_top_b %}
         {% load_blocks section="2-center-top-c" as 2_center_top_c %}
 
+        {% load_blocks section="2-center-mid-top-a" as 2_center_mid_top_a %}
+        {% load_blocks section="2-center-mid-top-b" as 2_center_mid_top_b %}
+        {% load_blocks section="2-center-mid-top-c" as 2_center_mid_top_c %}
+
         {% load_blocks section="2-center-content" as 2_center_content %}
+
+        {% load_blocks section="2-center-mid-bottom-a" as 2_center_mid_bottom_a %}
+        {% load_blocks section="2-center-mid-bottom-b" as 2_center_mid_bottom_b %}
+        {% load_blocks section="2-center-mid-bottom-c" as 2_center_mid_bottom_c %}
 
         {% load_blocks section="2-center-bottom-a" as 2_center_bottom_a %}
         {% load_blocks section="2-center-bottom-b" as 2_center_bottom_b %}
@@ -526,7 +591,7 @@ col-10 offset-2 col-lg-12 offset-lg-0
                     <!-- end Middle Top -->
 
                     <!-- Blocks in center positions -->
-                    {% if 2_center_top_a or 2_center_top_b or 2_center_top_c or 2_center_content or 2_center_bottom_a or 2_center_bottom_b or 2_center_bottom_c %}
+                    {% if 2_center_top_a or 2_center_top_b or 2_center_top_c or 2_center_mid_top_a or 2_center_mid_top_b or 2_center_mid_top_c or 2_center_content or 2_center_mid_bottom_a or 2_center_mid_bottom_b or 2_center_mid_bottom_c or 2_center_bottom_a or 2_center_bottom_b or 2_center_bottom_c %}
 
                         <!-- Blocks in left column -->
                         {% if 2_left_a or 2_left_b %}
@@ -583,6 +648,30 @@ col-10 offset-2 col-lg-12 offset-lg-0
                                 {% endif %}
                             </div>
                             {% endif %}
+                            <!-- END Center top -->
+
+                            <!-- Center mid-top -->
+                            {% if 2_center_mid_top_a or 2_center_mid_top_b or 2_center_top_c %}
+                            <div class="row">
+                                {% if 2_center_mid_top_a and 2_center_mid_top_b and 2_center_mid_top_c %}
+                                    <div class="{% block 2_center_mid_top_abc_a %}col-22 col-md-4{% endblock %}">{{ 2_center_mid_top_a }}</div>
+                                    <div class="{% block 2_center_mid_top_abc_b %}col-22 col-md-4{% endblock %}">{{ 2_center_mid_top_b }}</div>
+                                    <div class="{% block 2_center_mid_top_abc_c %}col-22 col-md-4{% endblock %}">{{ 2_center_mid_top_c }}</div>
+                                {% elif 2_center_mid_top_a and 2_center_mid_top_b %}
+                                    <div class="{% block 2_center_mid_top_ab_a %}col-22 col-md-8{% endblock %}">{{ 2_center_mid_top_a }}</div>
+                                    <div class="{% block 2_center_mid_top_ab_b %}col-22 col-md-4{% endblock %}">{{ 2_center_mid_top_b }}</div>
+                                {% elif 2_center_mid_top_a and 2_center_mid_top_c %}
+                                    <div class="{% block 2_center_mid_top_ac_a %}col-22 col-md-6{% endblock %}">{{ 2_center_mid_top_a }}</div>
+                                    <div class="{% block 2_center_mid_top_ac_c %}col-22 col-md-6{% endblock %}">{{ 2_center_mid_top_c }}</div>
+                                {% elif 2_center_mid_top_b and 2_center_mid_top_c %}
+                                    <div class="{% block 2_center_mid_top_bc_b %}col-22 col-md-4{% endblock %}">{{ 2_center_mid_top_b }}</div>
+                                    <div class="{% block 2_center_mid_top_bc_c %}col-22 col-md-8{% endblock %}">{{ 2_center_mid_top_c }}</div>
+                                {% else %}
+                                    <div class="col-22">{{ 2_center_mid_top_a }}{{ 2_center_mid_top_b }}{{ 2_center_mid_top_c }}</div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <!-- END Center mid-top -->
 
                             <!-- Center content -->
                             {% if 2_center_content %}
@@ -592,6 +681,30 @@ col-10 offset-2 col-lg-12 offset-lg-0
                                 </div>
                             </div>
                             {% endif %}
+                            <!-- END Center content -->
+
+                            <!-- Center mid-bottom -->
+                            {% if 2_center_mid_bottom_a or 2_center_mid_bottom_b or 2_center_mid_bottom_c %}
+                            <div class="row">
+                                {% if 2_center_mid_bottom_a and 2_center_mid_bottom_b and 2_center_mid_bottom_c %}
+                                    <div class="{% block 2_center_mid_bottom_abc_a %}col-22 col-md-4{% endblock %}">{{ 2_center_mid_bottom_a }}</div>
+                                    <div class="{% block 2_center_mid_bottom_abc_b %}col-22 col-md-4{% endblock %}">{{ 2_center_mid_bottom_b }}</div>
+                                    <div class="{% block 2_center_mid_bottom_abc_c %}col-22 col-md-4{% endblock %}">{{ 2_center_mid_bottom_c }}</div>
+                                {% elif 2_center_mid_bottom_a and 2_center_mid_bottom_b %}
+                                    <div class="{% block 2_center_mid_bottom_ab_a %}col-22 col-md-8{% endblock %}">{{ 2_center_mid_bottom_a }}</div>
+                                    <div class="{% block 2_center_mid_bottom_ab_b %}col-22 col-md-4{% endblock %}">{{ 2_center_mid_bottom_b }}</div>
+                                {% elif 2_center_mid_bottom_a and 2_center_mid_bottom_c %}
+                                    <div class="{% block 2_center_mid_bottom_ac_a %}col-22 col-md-6{% endblock %}">{{ 2_center_mid_bottom_a }}</div>
+                                    <div class="{% block 2_center_mid_bottom_ac_c %}col-22 col-md-6{% endblock %}">{{ 2_center_mid_bottom_c }}</div>
+                                {% elif 2_center_mid_bottom_b and 2_center_mid_bottom_c %}
+                                    <div class="{% block 2_center_mid_bottom_bc_b %}col-22 col-md-4{% endblock %}">{{ 2_center_mid_bottom_b }}</div>
+                                    <div class="{% block 2_center_mid_bottom_bc_c %}col-22 col-md-8{% endblock %}">{{ 2_center_mid_bottom_c }}</div>
+                                {% else %}
+                                    <div class="col-22">{{ 2_center_mid_bottom_a }}{{ 2_center_mid_bottom_b }}{{ 2_center_mid_bottom_c }}</div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <!-- END Center mid-bottom -->
 
                             <!-- Center bottom -->
                             {% if 2_center_bottom_a or 2_center_bottom_b or 2_center_bottom_c %}
@@ -762,7 +875,15 @@ col-10 offset-2 col-lg-12 offset-lg-0
         {% load_blocks section="3-center-top-b" as 3_center_top_b %}
         {% load_blocks section="3-center-top-c" as 3_center_top_c %}
 
+        {% load_blocks section="3-center-mid-top-a" as 3_center_mid_top_a %}
+        {% load_blocks section="3-center-mid-top-b" as 3_center_mid_top_b %}
+        {% load_blocks section="3-center-mid-top-c" as 3_center_mid_top_c %}
+
         {% load_blocks section="3-center-content" as 3_center_content %}
+
+        {% load_blocks section="3-center-mid-bottom-a" as 3_center_mid_bottom_a %}
+        {% load_blocks section="3-center-mid-bottom-b" as 3_center_mid_bottom_b %}
+        {% load_blocks section="3-center-mid-bottom-c" as 3_center_mid_bottom_c %}
 
         {% load_blocks section="3-center-bottom-a" as 3_center_bottom_a %}
         {% load_blocks section="3-center-bottom-b" as 3_center_bottom_b %}
@@ -834,7 +955,7 @@ col-10 offset-2 col-lg-12 offset-lg-0
                     <!-- end Middle Top -->
 
                     <!-- Blocks in center positions -->
-                    {% if 3_center_top_a or 3_center_top_b or 3_center_top_c or 3_center_content or 3_center_bottom_a or 3_center_bottom_b or 3_center_bottom_c %}
+                    {% if 3_center_top_a or 3_center_top_b or 3_center_top_c or 3_center_mid_top_a or 3_center_mid_top_b or 3_center_mid_top_c or 3_center_content or 3_center_mid_bottom_a or 3_center_mid_bottom_b or 3_center_mid_bottom_c or 3_center_bottom_a or 3_center_bottom_b or 3_center_bottom_c %}
 
                         <!-- Blocks in left column -->
                         {% if 3_left_a or 3_left_b %}
@@ -891,6 +1012,30 @@ col-10 offset-2 col-lg-12 offset-lg-0
                                 {% endif %}
                             </div>
                             {% endif %}
+                            <!-- END Center top -->
+
+                            <!-- Center mid-top -->
+                            {% if 3_center_mid_top_a or 3_center_mid_top_b or 3_center_top_c %}
+                            <div class="row">
+                                {% if 3_center_mid_top_a and 3_center_mid_top_b and 3_center_mid_top_c %}
+                                    <div class="{% block 3_center_mid_top_abc_a %}col-33 col-md-4{% endblock %}">{{ 3_center_mid_top_a }}</div>
+                                    <div class="{% block 3_center_mid_top_abc_b %}col-33 col-md-4{% endblock %}">{{ 3_center_mid_top_b }}</div>
+                                    <div class="{% block 3_center_mid_top_abc_c %}col-33 col-md-4{% endblock %}">{{ 3_center_mid_top_c }}</div>
+                                {% elif 3_center_mid_top_a and 3_center_mid_top_b %}
+                                    <div class="{% block 3_center_mid_top_ab_a %}col-33 col-md-8{% endblock %}">{{ 3_center_mid_top_a }}</div>
+                                    <div class="{% block 3_center_mid_top_ab_b %}col-33 col-md-4{% endblock %}">{{ 3_center_mid_top_b }}</div>
+                                {% elif 3_center_mid_top_a and 3_center_mid_top_c %}
+                                    <div class="{% block 3_center_mid_top_ac_a %}col-33 col-md-6{% endblock %}">{{ 3_center_mid_top_a }}</div>
+                                    <div class="{% block 3_center_mid_top_ac_c %}col-33 col-md-6{% endblock %}">{{ 3_center_mid_top_c }}</div>
+                                {% elif 3_center_mid_top_b and 3_center_mid_top_c %}
+                                    <div class="{% block 3_center_mid_top_bc_b %}col-33 col-md-4{% endblock %}">{{ 3_center_mid_top_b }}</div>
+                                    <div class="{% block 3_center_mid_top_bc_c %}col-33 col-md-8{% endblock %}">{{ 3_center_mid_top_c }}</div>
+                                {% else %}
+                                    <div class="col-33">{{ 3_center_mid_top_a }}{{ 3_center_mid_top_b }}{{ 3_center_mid_top_c }}</div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <!-- END Center mid-top -->
 
                             <!-- Center content -->
                             {% if 3_center_content %}
@@ -900,6 +1045,30 @@ col-10 offset-2 col-lg-12 offset-lg-0
                                 </div>
                             </div>
                             {% endif %}
+                            <!-- END Center content -->
+
+                            <!-- Center mid-bottom -->
+                            {% if 3_center_mid_bottom_a or 3_center_mid_bottom_b or 3_center_mid_bottom_c %}
+                            <div class="row">
+                                {% if 3_center_mid_bottom_a and 3_center_mid_bottom_b and 3_center_mid_bottom_c %}
+                                    <div class="{% block 3_center_mid_bottom_abc_a %}col-33 col-md-4{% endblock %}">{{ 3_center_mid_bottom_a }}</div>
+                                    <div class="{% block 3_center_mid_bottom_abc_b %}col-33 col-md-4{% endblock %}">{{ 3_center_mid_bottom_b }}</div>
+                                    <div class="{% block 3_center_mid_bottom_abc_c %}col-33 col-md-4{% endblock %}">{{ 3_center_mid_bottom_c }}</div>
+                                {% elif 3_center_mid_bottom_a and 3_center_mid_bottom_b %}
+                                    <div class="{% block 3_center_mid_bottom_ab_a %}col-33 col-md-8{% endblock %}">{{ 3_center_mid_bottom_a }}</div>
+                                    <div class="{% block 3_center_mid_bottom_ab_b %}col-33 col-md-4{% endblock %}">{{ 3_center_mid_bottom_b }}</div>
+                                {% elif 3_center_mid_bottom_a and 3_center_mid_bottom_c %}
+                                    <div class="{% block 3_center_mid_bottom_ac_a %}col-33 col-md-6{% endblock %}">{{ 3_center_mid_bottom_a }}</div>
+                                    <div class="{% block 3_center_mid_bottom_ac_c %}col-33 col-md-6{% endblock %}">{{ 3_center_mid_bottom_c }}</div>
+                                {% elif 3_center_mid_bottom_b and 3_center_mid_bottom_c %}
+                                    <div class="{% block 3_center_mid_bottom_bc_b %}col-33 col-md-4{% endblock %}">{{ 3_center_mid_bottom_b }}</div>
+                                    <div class="{% block 3_center_mid_bottom_bc_c %}col-33 col-md-8{% endblock %}">{{ 3_center_mid_bottom_c }}</div>
+                                {% else %}
+                                    <div class="col-33">{{ 3_center_mid_bottom_a }}{{ 3_center_mid_bottom_b }}{{ 3_center_mid_bottom_c }}</div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <!-- END Center mid-bottom -->
 
                             <!-- Center bottom -->
                             {% if 3_center_bottom_a or 3_center_bottom_b or 3_center_bottom_c %}

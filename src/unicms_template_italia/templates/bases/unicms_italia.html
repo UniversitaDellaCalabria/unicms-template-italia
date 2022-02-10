@@ -244,7 +244,7 @@ col-10 offset-2 col-lg-12 offset-lg-0
                                     {% elif 1_left_a %}
                                     <div class="col-12">{{ 1_left_a }}</div>
                                     {% else %}
-                                    <div class="ol-12">{{ 1_left_b }}</div>
+                                    <div class="col-12">{{ 1_left_b }}</div>
                                     {% endif %}
                                 </div>
                             </div>
@@ -252,15 +252,40 @@ col-10 offset-2 col-lg-12 offset-lg-0
                         <!-- end Blocks in left column -->
 
                         <!-- Blocks in Center column (takes available space) -->
-                        {% if 1_left_a and 1_left_b %}
-                        <div class="{% block 1_center_left_ab %}col{% endblock %}">
+                        {% if 1_left_a and 1_left_b and 1_right_a and 1_right_b %}
+                        <div class="{% block 1_center_left_ab_right_ab %}col-12 col-lg-4{% endblock %}">
+                        {% elif 1_left_a and 1_left_b and 1_right_a %}
+                        <div class="{% block 1_center_left_ab_right_a %}col-12 col-lg-5{% endblock %}">
+                        {% elif 1_left_a and 1_left_b and 1_right_b %}
+                        <div class="{% block 1_center_left_ab_right_b %}col-12 col-lg-4{% endblock %}">
+                        {% elif 1_left_a and 1_right_a and 1_right_b %}
+                        <div class="{% block 1_center_left_a_right_ab %}col-12 col-lg-5{% endblock %}">
+                        {% elif 1_left_a and 1_right_a %}
+                        <div class="{% block 1_center_left_a_right_a %}col-12 col-lg-6{% endblock %}">
+                        {% elif 1_left_a and 1_right_b %}
+                        <div class="{% block 1_center_left_a_right_b %}col-12 col-lg-5{% endblock %}">
+                        {% elif 1_left_b and 1_right_a and 1_right_b %}
+                        <div class="{% block 1_center_left_b_right_ab %}col-12 col-lg-4 offset-lg-1{% endblock %}">
+                        {% elif 1_left_b and 1_right_a %}
+                        <div class="{% block 1_center_left_b_right_a %}col-12 col-lg-5 offset-lg-1{% endblock %}">
+                        {% elif 1_left_b and 1_right_b %}
+                        <div class="{% block 1_center_left_b_right_b %}col-12 col-lg-4 offset-lg-1{% endblock %}">
+                        {% elif 1_left_a and 1_left_b %}
+                        <div class="{% block 1_center_left_ab %}col-12 col-lg-8{% endblock %}">
                         {% elif 1_left_a %}
-                        <div class="{% block 1_center_left_a %}col{% endblock %}">
+                        <div class="{% block 1_center_left_a %}col-12 col-lg-9{% endblock %}">
                         {% elif 1_left_b %}
-                        <div class="{% block 1_center_left_b %}col offset-md-1{% endblock %}">
+                        <div class="{% block 1_center_left_b %}col-12 col-lg-8 offset-lg-1{% endblock %}">
+                        {% elif 1_right_a and 1_right_b %}
+                        <div class="{% block 1_center_right_ab %}col-12 col-lg-8{% endblock %}">
+                        {% elif 1_right_a %}
+                        <div class="{% block 1_center_right_a %}col-12 col-lg-9{% endblock %}">
+                        {% elif 1_right_b %}
+                        <div class="{% block 1_center_right_b %}col-12 col-lg-8 offset-lg-1{% endblock %}">
                         {% else %}
-                        <div class="{% block 1_center %}col{% endblock %}">
+                        <div class="{% block 1_center %}col-12{% endblock %}">
                         {% endif %}
+                        <!-- End Blocks in Center column (takes available space) -->
 
                             <!-- Center top -->
                             {% if 1_center_top_a or 1_center_top_b or 1_center_top_c %}
@@ -609,7 +634,7 @@ col-10 offset-2 col-lg-12 offset-lg-0
                                     {% elif 2_left_a %}
                                     <div class="col-12">{{ 2_left_a }}</div>
                                     {% else %}
-                                    <div class="ol-12">{{ 2_left_b }}</div>
+                                    <div class="col-12">{{ 2_left_b }}</div>
                                     {% endif %}
                                 </div>
                             </div>
@@ -617,15 +642,40 @@ col-10 offset-2 col-lg-12 offset-lg-0
                         <!-- end Blocks in left column -->
 
                         <!-- Blocks in Center column (takes available space) -->
-                        {% if 2_left_a and 2_left_b %}
-                        <div class="{% block 2_center_left_ab %}col{% endblock %}">
+                        {% if 2_left_a and 2_left_b and 2_right_a and 2_right_b %}
+                        <div class="{% block 2_center_left_ab_right_ab %}col-12 col-lg-4{% endblock %}">
+                        {% elif 2_left_a and 2_left_b and 2_right_a %}
+                        <div class="{% block 2_center_left_ab_right_a %}col-12 col-lg-5{% endblock %}">
+                        {% elif 2_left_a and 2_left_b and 2_right_b %}
+                        <div class="{% block 2_center_left_ab_right_b %}col-12 col-lg-4{% endblock %}">
+                        {% elif 2_left_a and 2_right_a and 2_right_b %}
+                        <div class="{% block 2_center_left_a_right_ab %}col-12 col-lg-5{% endblock %}">
+                        {% elif 2_left_a and 2_right_a %}
+                        <div class="{% block 2_center_left_a_right_a %}col-12 col-lg-6{% endblock %}">
+                        {% elif 2_left_a and 2_right_b %}
+                        <div class="{% block 2_center_left_a_right_b %}col-12 col-lg-5{% endblock %}">
+                        {% elif 2_left_b and 2_right_a and 2_right_b %}
+                        <div class="{% block 2_center_left_b_right_ab %}col-12 col-lg-4 offset-lg-1{% endblock %}">
+                        {% elif 2_left_b and 2_right_a %}
+                        <div class="{% block 2_center_left_b_right_a %}col-12 col-lg-5 offset-lg-1{% endblock %}">
+                        {% elif 2_left_b and 2_right_b %}
+                        <div class="{% block 2_center_left_b_right_b %}col-12 col-lg-4 offset-lg-1{% endblock %}">
+                        {% elif 2_left_a and 2_left_b %}
+                        <div class="{% block 2_center_left_ab %}col-12 col-lg-8{% endblock %}">
                         {% elif 2_left_a %}
-                        <div class="{% block 2_center_left_a %}col{% endblock %}">
+                        <div class="{% block 2_center_left_a %}col-12 col-lg-9{% endblock %}">
                         {% elif 2_left_b %}
-                        <div class="{% block 2_center_left_b %}col offset-md-1{% endblock %}">
+                        <div class="{% block 2_center_left_b %}col-12 col-lg-8 offset-lg-1{% endblock %}">
+                        {% elif 2_right_a and 2_right_b %}
+                        <div class="{% block 2_center_right_ab %}col-12 col-lg-8{% endblock %}">
+                        {% elif 2_right_a %}
+                        <div class="{% block 2_center_right_a %}col-12 col-lg-9{% endblock %}">
+                        {% elif 2_right_b %}
+                        <div class="{% block 2_center_right_b %}col-12 col-lg-8 offset-lg-1{% endblock %}">
                         {% else %}
-                        <div class="{% block 2_center %}col{% endblock %}">
+                        <div class="{% block 2_center %}col-12{% endblock %}">
                         {% endif %}
+                        <!-- End Blocks in Center column (takes available space) -->
 
                             <!-- Center top -->
                             {% if 2_center_top_a or 2_center_top_b or 2_center_top_c %}
@@ -973,7 +1023,7 @@ col-10 offset-2 col-lg-12 offset-lg-0
                                     {% elif 3_left_a %}
                                     <div class="col-12">{{ 3_left_a }}</div>
                                     {% else %}
-                                    <div class="ol-12">{{ 3_left_b }}</div>
+                                    <div class="col-12">{{ 3_left_b }}</div>
                                     {% endif %}
                                 </div>
                             </div>
@@ -981,15 +1031,40 @@ col-10 offset-2 col-lg-12 offset-lg-0
                         <!-- end Blocks in left column -->
 
                         <!-- Blocks in Center column (takes available space) -->
-                        {% if 3_left_a and 3_left_b %}
-                        <div class="{% block 3_center_left_ab %}col{% endblock %}">
+                        {% if 3_left_a and 3_left_b and 3_right_a and 3_right_b %}
+                        <div class="{% block 3_center_left_ab_right_ab %}col-12 col-lg-4{% endblock %}">
+                        {% elif 3_left_a and 3_left_b and 3_right_a %}
+                        <div class="{% block 3_center_left_ab_right_a %}col-12 col-lg-5{% endblock %}">
+                        {% elif 3_left_a and 3_left_b and 3_right_b %}
+                        <div class="{% block 3_center_left_ab_right_b %}col-12 col-lg-4{% endblock %}">
+                        {% elif 3_left_a and 3_right_a and 3_right_b %}
+                        <div class="{% block 3_center_left_a_right_ab %}col-12 col-lg-5{% endblock %}">
+                        {% elif 3_left_a and 3_right_a %}
+                        <div class="{% block 3_center_left_a_right_a %}col-12 col-lg-6{% endblock %}">
+                        {% elif 3_left_a and 3_right_b %}
+                        <div class="{% block 3_center_left_a_right_b %}col-12 col-lg-5{% endblock %}">
+                        {% elif 3_left_b and 3_right_a and 3_right_b %}
+                        <div class="{% block 3_center_left_b_right_ab %}col-12 col-lg-4 offset-lg-1{% endblock %}">
+                        {% elif 3_left_b and 3_right_a %}
+                        <div class="{% block 3_center_left_b_right_a %}col-12 col-lg-5 offset-lg-1{% endblock %}">
+                        {% elif 3_left_b and 3_right_b %}
+                        <div class="{% block 3_center_left_b_right_b %}col-12 col-lg-4 offset-lg-1{% endblock %}">
+                        {% elif 3_left_a and 3_left_b %}
+                        <div class="{% block 3_center_left_ab %}col-12 col-lg-8{% endblock %}">
                         {% elif 3_left_a %}
-                        <div class="{% block 3_center_left_a %}col{% endblock %}">
+                        <div class="{% block 3_center_left_a %}col-12 col-lg-9{% endblock %}">
                         {% elif 3_left_b %}
-                        <div class="{% block 3_center_left_b %}col offset-md-1{% endblock %}">
+                        <div class="{% block 3_center_left_b %}col-12 col-lg-8 offset-lg-1{% endblock %}">
+                        {% elif 3_right_a and 3_right_b %}
+                        <div class="{% block 3_center_right_ab %}col-12 col-lg-8{% endblock %}">
+                        {% elif 3_right_a %}
+                        <div class="{% block 3_center_right_a %}col-12 col-lg-9{% endblock %}">
+                        {% elif 3_right_b %}
+                        <div class="{% block 3_center_right_b %}col-12 col-lg-8 offset-lg-1{% endblock %}">
                         {% else %}
-                        <div class="{% block 3_center %}col{% endblock %}">
+                        <div class="{% block 3_center %}col-12{% endblock %}">
                         {% endif %}
+                        <!-- End Blocks in Center column (takes available space) -->
 
                             <!-- Center top -->
                             {% if 3_center_top_a or 3_center_top_b or 3_center_top_c %}

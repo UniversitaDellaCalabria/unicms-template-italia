@@ -3,27 +3,30 @@
 
 {% with collection.get_items as collection_items %}
 {% if collection_items %}
-<div class="link-list-wrapper">
-    <ul class="link-list">
-        {% for item in collection_items %}
-        <li>
-            <a class="list-item left-icon"
-               href="{{ item.media.get_media_path }}"
-               alt="{{ item.media.description }}">
-                <svg class="icon icon-secondary">
-                    <use xlink:href="{% static 'svg/sprite.svg' %}#it-file"></use>
-                </svg>
-                <span>
-                    {{ item.media.title }}
-                    <span class="text-muted small">
-                        [{{ item.media.file_type }} - {{ item.media.file_size_kb }} KB]
-                    </span>
-                </span>
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+<ul class="list-unstyled">
+    {% for item in collection_items %}
+    <li class="mb-2">
+        <a class="left-icon"
+           href="{{ item.media.get_media_path }}"
+           alt="{{ item.media.description }}">
+            <svg class="icon icon-secondary">
+                <use xlink:href="{% static 'svg/sprite.svg' %}#it-file"></use>
+            </svg>
+            <span>
+                {{ item.media.title }}
+            </span>
+        </a>
+        <br>
+        <span class="text-muted small ml-4 pl-2">
+            {{ item.media.description }}
+        </span>
+        <br>
+        <span class="text-muted small ml-4 pl-2">
+            [{{ item.media.file_type }} - {{ item.media.file_size_kb }} KB]
+        </span>
+    </li>
+    {% endfor %}
+</ul>
 {% endif %}
 {% endwith %}
 

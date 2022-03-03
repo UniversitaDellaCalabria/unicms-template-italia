@@ -255,7 +255,7 @@ var search = new Vue({
         <div class="col" v-else>
             <div class="" v-if="items">
 
-                <list-panel v-bind:data="items" v-if="items.count"></list-panel>
+                <list-panel :data="items" v-if="items.count"></list-panel>
 
                 <!--start card-->
                 <div class="card-wrapper card-space"  v-for="item in items.results" :key="item.id">
@@ -268,7 +268,7 @@ var search = new Vue({
                                      <div class="img-responsive-wrapper mb-1 w-100">
                                         <div class="img-responsive mt-2">
                                             <figure class="img-wrapper">
-                                                <img  v-bind:src="item.image" />
+                                                <img  :src="item.image" />
                                             </figure>
                                         </div>
                                     </div>
@@ -291,14 +291,16 @@ var search = new Vue({
                                     <div class="mt-2">
                                       <ul class="list-unstyled">
                                         <li v-for="url in item.urls">
-                                          <a v-bind:href="[[ url ]]">
-                                            <div class="it-right-zone">
-                                              <svg class="icon icon-xs">
-                                                <use xlink:href="{% static 'svg/sprite.svg' %}#it-link"></use>
-                                              </svg>
-                                              <span class="text">//[[ url | val_replace('//', '') ]]</span>
-                                            </div>
-                                          </a>
+                                            <small>
+                                                <a :href="url">
+                                                    <div class="it-right-zone">
+                                                        <svg class="icon icon-xs">
+                                                            <use xlink:href="{% static 'svg/sprite.svg' %}#it-link"></use>
+                                                        </svg>
+                                                        <span class="text">//[[ url | val_replace('//', '') ]]</span>
+                                                    </div>
+                                                </a>
+                                            </small>
                                         </li>
                                       </ul>
                                     </div>
@@ -313,7 +315,7 @@ var search = new Vue({
                 </div>
                 <!--end card-->
 
-                <list-panel v-bind:data="items" v-if="items.count"></list-panel>
+                <list-panel :data="items" v-if="items.count"></list-panel>
 
             </div>
         </div>

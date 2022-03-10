@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-10 13:01+0100\n"
-"PO-Revision-Date: 2022-03-03 09:38+0100\n"
+"POT-Creation-Date: 2022-03-10 15:39+0100\n"
+"PO-Revision-Date: 2022-03-10 15:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -432,63 +432,69 @@ msgid "close"
 msgstr "chiudi"
 
 #: templates/blocks/italia_search_engine.html:12
-#: templates/blocks/italia_search_engine.html:44
+#: templates/blocks/italia_search_engine.html:46
+#: templates/blocks/italia_search_engine.html:73
 msgid "Search"
 msgstr "Cerca"
 
-#: templates/blocks/italia_search_engine.html:25
+#: templates/blocks/italia_search_engine.html:27
 msgid "Write words and \"phrases\" that you are looking for"
 msgstr "Cerca parole e \"frasi\""
 
-#: templates/blocks/italia_search_engine.html:58
+#: templates/blocks/italia_search_engine.html:54
+msgid "Search in tags"
+msgstr "Cerca nei tag"
+
+#: templates/blocks/italia_search_engine.html:88
 msgid "Advanced search"
 msgstr "Ricerca avanzata"
 
-#: templates/blocks/italia_search_engine.html:80
+#: templates/blocks/italia_search_engine.html:110
 msgid "From publishing date"
 msgstr "Dalla data di pubblicazione"
 
-#: templates/blocks/italia_search_engine.html:88
+#: templates/blocks/italia_search_engine.html:118
 msgid "To publishing date"
 msgstr "Alla data di pubblicazione"
 
-#: templates/blocks/italia_search_engine.html:101
+#: templates/blocks/italia_search_engine.html:131
 msgid "Category"
 msgstr "Categoria"
 
-#: templates/blocks/italia_search_engine.html:128
+#: templates/blocks/italia_search_engine.html:158
 msgid "Web Site"
 msgstr "Sito web"
 
-#: templates/blocks/italia_search_engine.html:217
+#: templates/blocks/italia_search_engine.html:251
 msgid "results"
 msgstr "risultati"
 
-#: templates/blocks/italia_search_engine.html:219
+#: templates/blocks/italia_search_engine.html:253
 msgid "pages"
 msgstr "pagine"
 
-#: templates/blocks/italia_search_engine.html:228
-#: templates/blocks/italia_search_engine.html:234
+#: templates/blocks/italia_search_engine.html:262
+#: templates/blocks/italia_search_engine.html:268
 msgid "Page"
 msgstr "Pagina"
 
-#: templates/blocks/italia_search_engine.html:228
+#: templates/blocks/italia_search_engine.html:262
 msgid "Previous"
 msgstr "Precedente"
 
-#: templates/blocks/italia_search_engine.html:234
+#: templates/blocks/italia_search_engine.html:268
 msgid "Next"
 msgstr "Successiva"
 
-#: templates/blocks/italia_search_engine.html:251
+#: templates/blocks/italia_search_engine.html:285
 msgid "Loading data"
 msgstr "Caricamento dati"
 
+#: templates/blocks/italia_search_engine.html:328
 msgid "Available on"
 msgstr "Disponibile su"
 
-#: templates/blocks/italia_search_engine.html:313
+#: templates/blocks/italia_search_engine.html:349
 msgid "Published in"
 msgstr "Pubblicata in"
 

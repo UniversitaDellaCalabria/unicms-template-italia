@@ -19,30 +19,60 @@
         <div class="card-wrapper card-space">
             <div class="card card-bg no-after pt-4">
                 <div class="card-body">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <label for="search_input">
-                                {% trans 'Write words and "phrases" that you are looking for' %}
-                                </label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="search_input"
-                                name="search_input"
-                                value="{{ request.GET.search }}">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <svg class="icon icon-sm icon-muted">
-                                        <use xlink:href="{% static 'svg/sprite.svg' %}#it-search"></use>
-                                        </svg>
+
+                    <div class="row form-group">
+                        <div class="col-md">
+                            <div class="input-group">
+                                <label for="search_input">
+                                    {% trans 'Write words and "phrases" that you are looking for' %}
+                                    </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="search_input"
+                                    name="search_input"
+                                    value="{{ request.GET.search }}">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <svg class="icon icon-sm icon-muted">
+                                            <use xlink:href="{% static 'svg/sprite.svg' %}#it-search"></use>
+                                            </svg>
+                                    </div>
+                                    <button
+                                        class="btn btn-primary"
+                                        type="button"
+                                        id="search-button"
+                                        onclick="search.get_args=encodeQueryData(get_form_paramenters());">
+                                        {% trans "Search" %}
+                                    </button>
                                 </div>
-                                <button
-                                    class="btn btn-primary"
-                                    type="button"
-                                    id="search-button"
-                                    onclick="search.get_args=encodeQueryData(get_form_paramenters());">
-                                    {% trans "Search" %}
-                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="input-group">
+                                <label for="tags_input">
+                                    {% trans 'Search in tags' %}
+                                    </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="tags_input"
+                                    name="tags_input"
+                                    value="{{ request.GET.tags }}">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <svg class="icon icon-sm icon-muted">
+                                            <use xlink:href="{% static 'svg/sprite.svg' %}#it-search"></use>
+                                            </svg>
+                                    </div>
+                                    <button
+                                        class="btn btn-primary"
+                                        type="button"
+                                        id="tags-button"
+                                        onclick="search.get_args=encodeQueryData(get_form_paramenters());">
+                                        {% trans "Search" %}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -166,6 +196,10 @@ function get_form_paramenters(){
     // search
     let search = document.getElementById('search_input').value
     if (search) dict['search'] = search
+
+    // tags
+    let tags = document.getElementById('tags_input').value
+    if (tags) dict['tags'] = tags
 
     // categories
     let cat_placeholder = jQuery.fn.selectpicker.defaults['noneSelectedText'] // document.getElementById('categories_input').dataset.placeholder
@@ -342,7 +376,14 @@ var search = new Vue({
         this.set_args_from_url();
         this.set_initial_field_value();
         let search_input = document.getElementById("search_input");
+        let tags_input = document.getElementById("tags_input");
         search_input.addEventListener("keypress", function(e) {
+            // console.log(e.keyCode);
+            if (e.keyCode == 13) {
+                search.update_args();
+            }
+        });
+        tags_input.addEventListener("keypress", function(e) {
             // console.log(e.keyCode);
             if (e.keyCode == 13) {
                 search.update_args();
@@ -370,7 +411,11 @@ var search = new Vue({
             let urlParams = new URLSearchParams(queryString);
             let search = urlParams.get('search')
             if (search) {
-                document.getElementById("search").value = search;
+                document.getElementById("search_input").value = search;
+            }
+            let tags = urlParams.get('tags')
+            if (tags) {
+                document.getElementById("tags_input").value = tags;
             }
         },
         set_args_from_url() {

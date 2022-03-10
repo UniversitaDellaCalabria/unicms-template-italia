@@ -23,14 +23,12 @@
                     <div class="row form-group">
                         <div class="col-md">
                             <div class="input-group">
-                                <label for="search_input">
-                                    {% trans 'Write words and "phrases" that you are looking for' %}
-                                    </label>
                                 <input
                                     type="text"
                                     class="form-control"
                                     id="search_input"
                                     name="search_input"
+                                    placeholder='{% blocktranslate %}Words or "phrases"{% endblocktranslate %}'
                                     value="{{ request.GET.search }}">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
@@ -48,16 +46,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md">
+                        <div class="col-md mt-3 mt-lg-0">
                             <div class="input-group">
-                                <label for="tags_input">
-                                    {% trans 'Search in tags' %}
-                                    </label>
                                 <input
                                     type="text"
                                     class="form-control"
                                     id="tags_input"
                                     name="tags_input"
+                                    placeholder="{% trans 'Tags' %}"
                                     value="{{ request.GET.tags }}">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
@@ -70,7 +66,7 @@
                                         type="button"
                                         id="tags-button"
                                         onclick="search.get_args=encodeQueryData(get_form_paramenters());">
-                                        {% trans "Search" %}
+                                        {% trans "Search" %} {% trans "tags" %}
                                     </button>
                                 </div>
                             </div>

@@ -8,7 +8,7 @@
 
 <div class="row">
     <div class="col">
-        <h3 class="card-title mb-4" style="">
+        <h3 class="lighter mb-4">
             {% trans "Search" %}
         </h3>
     </div>
@@ -289,20 +289,25 @@ var search = new Vue({
                                         [[ item.heading | truncate(448) ]]
                                     </p>
                                     <div class="mt-2">
-                                      <ul class="list-unstyled">
-                                        <li v-for="url in item.urls">
-                                            <small>
-                                                <a :href="url">
-                                                    <div class="it-right-zone">
-                                                        <svg class="icon icon-xs">
-                                                            <use xlink:href="{% static 'svg/sprite.svg' %}#it-link"></use>
-                                                        </svg>
-                                                        <span class="text">//[[ url | val_replace('//', '') ]]</span>
-                                                    </div>
-                                                </a>
-                                            </small>
-                                        </li>
-                                      </ul>
+                                        <small>
+                                            <span class="text-muted">
+                                                {% trans "Available on" %}
+                                            </span>
+                                            <ul class="list-unstyled">
+                                                <li v-for="url in item.urls">
+                                                    <a :href="url">
+                                                        <div class="it-right-zone">
+                                                            <svg class="icon icon-xs">
+                                                                <use xlink:href="{% static 'svg/sprite.svg' %}#it-link"></use>
+                                                            </svg>
+                                                            <span class="text">
+                                                                [[ url.split("/contents")[0] | val_replace('//', '') ]]
+                                                            </span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </small>
                                     </div>
                                 </div>
                             </div>

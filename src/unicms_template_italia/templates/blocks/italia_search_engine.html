@@ -4,6 +4,9 @@
 {% load unicms_contexts %}
 {% load unicms_pages %}
 {% load unicms_publications %}
+{% load unicms_templates %}
+
+{% settings_value "CMS_PATH_PREFIX" as cms_path_prefix %}
 
 
 <div class="row">
@@ -293,10 +296,10 @@ var search = new Vue({
                         <div class="card-body">
 
                             <div class="row">
-                                <div class="col-3" v-if="item.image">
+                                <div class="col-12 col-lg-3 mb-3 mb-lg-0" v-if="item.image">
                                     <!-- image preview -->
                                      <div class="img-responsive-wrapper mb-1 w-100">
-                                        <div class="img-responsive mt-2">
+                                        <div class="img-responsive mt-lg-2">
                                             <figure class="img-wrapper">
                                                 <img  :src="item.image" />
                                             </figure>
@@ -318,6 +321,17 @@ var search = new Vue({
                                     <p v-if="item.heading">
                                         [[ item.heading | truncate(448) ]]
                                     </p>
+                                    <div class="mt-2 mb-3" v-if="item.tags.length > 0">
+                                        <small>
+                                            <span class="text-muted">{% trans "tags" %}</span>:
+                                            <span v-for="(tag,index) in item.tags">
+                                                <a :href="'/{{ cms_path_prefix }}search/?tags=' +  tag">[[ tag ]]</a>
+                                                <span v-if="index < item.tags.length-1">
+                                                -
+                                                </span>
+                                            </span>
+                                        </small>
+                                    </div>
                                     <div class="mt-2">
                                         <small>
                                             <span class="text-muted">

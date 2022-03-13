@@ -7,6 +7,7 @@
 {% load unicms_templates %}
 
 {% settings_value "CMS_PATH_PREFIX" as cms_path_prefix %}
+{% settings_value "ALLOW_SEARCH_IN_SITES" as allowed_search_sites %}
 
 
 <div class="row">
@@ -149,6 +150,7 @@
                                 </div>
 
                                 <!-- web site -->
+                                {% if '*' in allowed_search_sites or allowed_search_sites|length > 1 %}
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-sm">
@@ -162,18 +164,21 @@
                                                     data-multiple-separator="">
                                                     {% cms_sites as sites %}
                                                     {% for site, domain in sites %}
+                                                        {% if '*' in allowed_search_sites or domain in allowed_search_sites %}
                                                         <option
                                                             value="{{ domain }}"
                                                             title=""
                                                             placeholder=""
                                                             data-content="<span class='select-pill'><span class='select-pill-text'>{{ domain }}</span></span>">
                                                         </option>
+                                                        {% endif %}
                                                     {% endfor %}
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

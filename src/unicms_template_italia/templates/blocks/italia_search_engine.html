@@ -345,14 +345,14 @@ var search = new Vue({
                                                 {% trans "Available on" %}
                                             </span>
                                             <ul class="list-unstyled">
-                                                <li v-for="url in item.urls">
+                                                <li v-for="url in item.urls" v-if="allowed_search_sites.includes(url.replace('//','').split('/')[0]) || allowed_search_sites.includes('*')">
                                                     <a :href="url">
                                                         <div class="it-right-zone">
                                                             <svg class="icon icon-xs">
                                                                 <use xlink:href="{% static 'svg/sprite.svg' %}#it-link"></use>
                                                             </svg>
                                                             <span class="text">
-                                                                [[ url.split("/contents")[0] | val_replace('//', '') ]]
+                                                                [[ url.split("/contents")[0].replace('//', '') ]]
                                                             </span>
                                                         </div>
                                                     </a>
@@ -381,7 +381,8 @@ var search = new Vue({
             items: [],
             newsLoaded: true,
             get_args: '',
-            url: '{% url "unicms_search:api-search-engine" %}'
+            url: '{% url "unicms_search:api-search-engine" %}',
+            allowed_search_sites: {{ allowed_search_sites|safe }}
         }
     },
     watch: {

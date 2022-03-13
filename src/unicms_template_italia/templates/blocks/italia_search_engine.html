@@ -222,11 +222,14 @@ function get_form_paramenters(){
         date_to = date_to.split('/')
         dict['date_end'] = date_to[2]+'-'+date_to[1]+'-'+date_to[0]
     }
+
     // websites
+    {% if '*' in allowed_search_sites or allowed_search_sites|length > 1 %}
     let site_placeholder = jQuery.fn.selectpicker.defaults['noneSelectedText'] //document.getElementById('websites_input').dataset.placeholder
     let site_obj = document.querySelectorAll("[data-id='websites_input']")[0]
     let sites = site_obj.innerText.trim().split('\n').filter(function(e) { return e !== site_placeholder })
     if (sites.length > 0) dict['sites'] = sites.join(',')
+    {% endif %}
 
     return dict
 }

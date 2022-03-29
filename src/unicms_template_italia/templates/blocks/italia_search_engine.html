@@ -96,28 +96,26 @@
                             <div class="collapse-body pt-4 pb-0">
 
                                 <!-- Date picker -->
-                                <div class="it-datepicker-wrapper">
-                                    <div class="form-group">
-
-                                        <div class="row">
-                                            <div class="col-sm">
-                                                <label for="date_from"></label>
-                                                <input
-                                                    class="form-control it-date-datepicker"
-                                                    id="date_from"
-                                                    type="text"
-                                                    placeholder="{% trans 'From publishing date' %}">
-                                            </div>
-                                            <div class="col-sm">
-                                                <label for="date_to"></label>
-                                                <input
-                                                    class="form-control it-date-datepicker"
-                                                    id="date_to"
-                                                    type="text"
-                                                    placeholder="{% trans 'To publishing date' %}">
-                                            </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <label for="date_from" style="font-size: .7777777778rem; margin-top: -30px">
+                                                {% trans 'From publishing date' %}
+                                            </label>
+                                            <input
+                                                id="date_from"
+                                                type="date"
+                                                placeholder="{% trans 'From publishing date' %}">
                                         </div>
-
+                                        <div class="col-sm mt-5 mt-sm-0">
+                                            <label for="date_from" style="font-size: .7777777778rem; margin-top: -30px">
+                                                {% trans 'To publishing date' %}
+                                            </label>
+                                            <input
+                                                id="date_to"
+                                                type="date"
+                                                placeholder="{% trans 'To publishing date' %}">
+                                        </div>
                                     </div>
                                 </div>
 
@@ -212,16 +210,19 @@ function get_form_paramenters(){
 
     // date_from
     let date_from = document.getElementById('date_from').value
-    if (date_from) {
-        date_from = date_from.split('/')
-        dict['date_start'] = date_from[2]+'-'+date_from[1]+'-'+date_from[0]
-    }
+    dict['date_start'] = date_from
+    //if (date_from) {
+        //date_from = date_from.split('/')
+        //dict['date_start'] = date_from[2]+'-'+date_from[1]+'-'+date_from[0]
+    //}
+
     // date_to
     let date_to = document.getElementById('date_to').value
-    if (date_to) {
-        date_to = date_to.split('/')
-        dict['date_end'] = date_to[2]+'-'+date_to[1]+'-'+date_to[0]
-    }
+    dict['date_end'] = date_to
+    //if (date_to) {
+        //date_to = date_to.split('/')
+        //dict['date_end'] = date_to[2]+'-'+date_to[1]+'-'+date_to[0]
+    //}
 
     // websites
     {% if '*' in allowed_search_sites or allowed_search_sites|length > 1 %}

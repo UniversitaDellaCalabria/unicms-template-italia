@@ -2,7 +2,10 @@
 {% load static %}
 
 {% load unicms_templates %}
+{% load unicms_template_italia %}
 
+{% settings_value "EDITORIAL_BOARD_BASE_URL" as editorial_board_base %}
+{% editorial_board_news_add webpath=webpath as editorial_board_add_news %}
 {% settings_value "LOGOUT_URL" as logout_url %}
 
 <div class="nav-item dropdown">
@@ -29,11 +32,20 @@
                     <ul class="link-list">
                         {% if not preview_mode %}
                         <li>
-                            <a class="list-item" href="#">
+                            <a class="list-item" href="{{ editorial_board_base }}" target="_blank">
                               <svg class="icon icon-md icon-dark">
                                 <use xlink:href="{% static 'svg/sprite.svg' %}#it-settings"></use>
                               </svg>
                                 <span class="m-2">{% trans "Editorial Board Backend" %}</span>
+                            </a>
+                            <hr>
+                        </li>
+                        <li>
+                            <a class="list-item" href="{{ editorial_board_add_news }}" target="_blank">
+                              <svg class="icon icon-md icon-dark">
+                                <use xlink:href="{% static 'svg/sprite.svg' %}#it-plus-circle"></use>
+                              </svg>
+                                <span class="m-2">{% trans "Add news in this webpath" %}</span>
                             </a>
                             <hr>
                         </li>

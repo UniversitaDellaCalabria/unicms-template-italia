@@ -25,6 +25,7 @@ def is_mega_menu(item):
 
 @register.simple_tag
 def editorial_board_news_add(webpath):
+    if not webpath: return None
     if not hasattr(settings, 'EDITORIAL_BOARD_NEWS_ADD_URL'): return '#'
     return settings.EDITORIAL_BOARD_NEWS_ADD_URL.format(website=webpath.site.pk,
                                                         webpath=webpath.pk)

@@ -37,3 +37,12 @@ def editorial_board_news_edit(item):
     return settings.EDITORIAL_BOARD_NEWS_EDIT_URL.format(website=item.webpath.site.pk,
                                                          webpath=item.webpath.pk,
                                                          news=item.pk)
+
+
+@register.simple_tag
+def editorial_board_page_publication_edit(item):
+    if not hasattr(settings, 'EDITORIAL_BOARD_PAGE_PUBLICATION_EDIT_URL'): return '#'
+    return settings.EDITORIAL_BOARD_PAGE_PUBLICATION_EDIT_URL.format(website=item.page.webpath.site.pk,
+                                                                     webpath=item.page.webpath.pk,
+                                                                     page=item.page.pk,
+                                                                     publication=item.pk)

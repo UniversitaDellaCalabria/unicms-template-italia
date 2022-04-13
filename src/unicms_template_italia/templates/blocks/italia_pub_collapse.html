@@ -25,6 +25,7 @@
          role="tabpanel"
          aria-labelledby="heading-{{ id }}-lft">
         <div class="collapse-body">
+            <p>{% include "includes/edit_page_publication.html" with item=page_publication %}</p>
             {% if publication.subheading %}
                 <p><i>{{ publication.subheading }}</i></p>
                 <hr>

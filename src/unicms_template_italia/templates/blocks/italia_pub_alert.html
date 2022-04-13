@@ -3,7 +3,10 @@
 
 
 <div class="alert alert-{{ variant }} mb-5" role="alert">
-    <h4 class="alert-heading">{{ publication.title }}</h4>
+    <h4 class="alert-heading">
+        {{ publication.title }}
+        {% include "includes/edit_page_publication.html" with item=page_publication %}
+    </h4>
     {% if publication.subheading %}
     <p><i>{{ publication.subheading }}</i></p>
     <hr>

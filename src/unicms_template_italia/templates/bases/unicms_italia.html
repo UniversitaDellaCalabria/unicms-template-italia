@@ -58,8 +58,8 @@
                 <div class="link-list-wrapper">
                     <ul class="link-list">
                         {% language_menu as language_urls %}
-                        {% for lang,url in language_urls.items %}
-                        <li><a class="list-item" href="{{ url }}"><span>{{ lang }}</span></a></li>
+                        {% for cod,params in language_urls.items %}
+                        <li><a class="list-item" href="{{ params.1 }}"><span>{{ params.0 }}</span></a></li>
                         {% endfor %}
                     </ul>
                 </div>

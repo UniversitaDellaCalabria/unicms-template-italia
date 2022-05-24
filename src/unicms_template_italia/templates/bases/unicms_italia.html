@@ -4,6 +4,7 @@
 
 {% load i18n %}
 {% load static %}
+{% load unicms_template_italia %}
 
 <!-- From app django-sass-processor -->
 {% if debug %}
@@ -1322,36 +1323,6 @@ col-10 offset-2 col-lg-12 offset-lg-0
 
 {% block extra_scripts %}
 {{ block.super }}
-<script>
-jQuery.event.special.touchstart = {
-    setup: function( _, ns, handle ) {
-        this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
-    }
-};
-jQuery.event.special.touchmove = {
-    setup: function( _, ns, handle ) {
-        this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
-    }
-};
-jQuery.event.special.wheel = {
-    setup: function( _, ns, handle ){
-        this.addEventListener("wheel", handle, { passive: true });
-    }
-};
-jQuery.event.special.mousewheel = {
-    setup: function( _, ns, handle ){
-        this.addEventListener("mousewheel", handle, { passive: true });
-    }
-};
-
-function init() {
-    var vidDefer = document.getElementsByTagName('iframe');
-    for (var i=0; i<vidDefer.length; i++) {
-        if(vidDefer[i].getAttribute('data-src')) {
-            vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
-        }
-    }
-}
-window.onload = init;
-</script>
+{% unicms_template_italia_static_path 'js/passive_listeners.js' %}
+{% unicms_template_italia_static_path 'js/deferred_iframe_src.js' %}
 {% endblock extra_scripts %}

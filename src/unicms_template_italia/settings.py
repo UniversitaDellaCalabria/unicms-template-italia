@@ -134,3 +134,7 @@ LINKEDIN_ENDPOINT = 'https://www.linkedin.com/shareArticle?mini=true&url='
 TELEGRAM_ENDPOINT = 'https://t.me/share/url?text=%s&url=%s'
 WHATSAPP_ENDPOINT = 'https://api.whatsapp.com/send?text='
 PINTEREST_ENDPOINT = 'https://www.pinterest.com/pin/create/button/?url='
+
+# CDN FOR STATICS
+UNICMS_TEMPLATE_ITALIA_USE_CDN = False
+UNICMS_TEMPLATE_ITALIA_CDN = 'https://cdn.jsdelivr.net/gh/UniversitaDellaCalabria/unicms-template-italia@0.8.0/src/unicms_template_italia/static'

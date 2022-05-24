@@ -84,7 +84,9 @@
 <!-- end Header slim wrapper -->
 
 <!-- URL link logo and org name -->
-{% block header_center_url %}{% settings_value "CMS_PATH_PREFIX" as cms_path_prefix %}/{{ cms_path_prefix }}{% endblock header_center_url %}
+{% block header_center_url %}
+{% settings_value "CMS_PATH_PREFIX" as cms_path_prefix %}/{{ cms_path_prefix }}
+{% endblock header_center_url %}
 
 {% block header_mobile_arrow %}
 {% endblock header_mobile_arrow %}

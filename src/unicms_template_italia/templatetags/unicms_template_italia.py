@@ -56,7 +56,6 @@ def editorial_board_page_publication_edit(item):
 @register.simple_tag
 def unicms_template_italia_static_path(resource):
     if not resource: return ''
-    print("ooooooooo", settings.UNICMS_TEMPLATE_ITALIA_USE_CDN)
     if settings.UNICMS_TEMPLATE_ITALIA_USE_CDN:
         return f'{settings.UNICMS_TEMPLATE_ITALIA_CDN}/{resource}'
     return static(resource)

@@ -1323,6 +1323,6 @@ col-10 offset-2 col-lg-12 offset-lg-0
 
 {% block extra_scripts %}
 {{ block.super }}
-{% unicms_template_italia_static_path 'js/passive_listeners.js' %}
-{% unicms_template_italia_static_path 'js/deferred_iframe_src.js' %}
+<script src="{% unicms_template_italia_static_path 'js/passive_listeners.js' %}"></script>
+<script src="{% unicms_template_italia_static_path 'js/deferred_iframe_src.js' %}"></script>
 {% endblock extra_scripts %}

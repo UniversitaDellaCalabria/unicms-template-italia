@@ -20,6 +20,9 @@
 {% load unicms_publications %}
 {% load unicms_templates %}
 
+
+{% block page_meta_robots %}{{ webpath.robots }}{% endblock page_meta_robots %}
+
 <!-- Return to Agid native template -->
 {% block extra_head %}
     {{ block.super }}

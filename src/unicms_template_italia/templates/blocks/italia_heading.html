@@ -1,7 +1,7 @@
 {% load static %}
 {% load unicms_contexts %}
 
-<{{ title_tag }} {% if classes %}class="{{ classes }}"{% endif %}>
+<{{ title_tag }} {% if classes %}class="{{ classes }}"{% endif %} {% if color %}style="color: {{ color }};"{% endif %}>
     {{ heading.title }}
 </{{ title_tag }}>
 {% if heading.description %}

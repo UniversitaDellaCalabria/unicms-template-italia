@@ -89,10 +89,10 @@ name: uniCMS - Bootstrap Italia template
 platforms:
   - linux
   - web
-releaseDate: '2022-05-24'
+releaseDate: '2022-07-31'
 roadmap: 'https://github.com/UniversitaDellaCalabria/unicms-template-italia/issues'
 softwareType: standalone/web
-softwareVersion: v0.8.4
+softwareVersion: v0.8.6
 url: 'https://github.com/UniversitaDellaCalabria/unicms-template-italia'
 usedBy:
   - Università della Calabria - https://www.unical.it

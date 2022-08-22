@@ -9,22 +9,28 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav class="navbar navbar-expand-lg has-megamenu">
+                <nav class="navbar navbar-expand-lg has-megamenu" aria-label="{% trans 'Main menu' %}">
                     <button class="custom-navbar-toggler"
                             type="button"
                             aria-controls="nav10"
                             aria-expanded="false"
-                            aria-label="Toggle navigation"
-                            data-target="#nav10">
+                            aria-label="{% trans 'Show/Hide menu' %}"
+                            data-bs-toggle="navbarcollapsible"
+                            data-bs-target="#nav10">
                         <svg class="icon">
                             <use xlink:href="{% static 'svg/sprite.svg' %}#it-burger"></use>
                         </svg>
                     </button>
-                    <div class="navbar-collapsable" id="nav10">
-                        <div class="overlay"></div>
-                        <div class="close-div sr-only">
+                    <div class="navbar-collapsable" id="nav10" style="display: none;">
+                        <div class="overlay" style="display: none;"></div>
+                        <div class="close-div">
                             <button class="btn close-menu" type="button">
-                                <span class="it-close"></span>{% trans "close" %}
+                                <svg class="icon">
+                                    <use xlink:href="{% static 'svg/sprite.svg' %}#it-close-big"></use>
+                                </svg>
+                                <span class="visually-hidden">
+                                    {% trans "Close" %}
+                                </span>
                             </button>
                         </div>
                         <div class="menu-wrapper">

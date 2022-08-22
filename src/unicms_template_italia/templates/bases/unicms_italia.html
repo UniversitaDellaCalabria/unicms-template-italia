@@ -29,6 +29,7 @@
     {{ block.super }}
     {% block head_inits %}
     {% include "inits/vue-init.html" %}
+    {% include "inits/owl-carousel-init.html" %}
     {% endblock head_inits %}
 
     {% block social_tags %}{% endblock social_tags %}
@@ -1312,10 +1313,10 @@ col-10 offset-2 col-lg-12 offset-lg-0
         </p>
         <div class="cookiebar-buttons">
             <a href="#" class="cookiebar-btn">
-                {% trans "Preferenze" %} <span class="sr-only">cookies</span>
+                {% trans "Preferenze" %} <span class="visually-hidden">cookies</span>
             </a>
             <button data-accept="cookiebar" class="cookiebar-btn cookiebar-confirm">
-                {% trans "Accetto" %}<span class="sr-only"> i cookies</span>
+                {% trans "Accetto" %}<span class="visually-hidden"> i cookies</span>
             </button>
         </div>
     </div>
@@ -1334,7 +1335,9 @@ col-10 offset-2 col-lg-12 offset-lg-0
 
 {% block extra_scripts %}
 {{ block.super }}
+{% comment %}
 <script src="{% unicms_template_italia_static_path 'js/passive_listeners.js' %}"></script>
+{% endcomment %}
 <script src="{% unicms_template_italia_static_path 'js/deferred_iframe_src.js' %}"></script>
 {% settings_value "CMS_PATH_PREFIX" as cms_path_prefix %}
 {% include "inits/search-input-handler.html" with cms_path_prefix=cms_path_prefix %}

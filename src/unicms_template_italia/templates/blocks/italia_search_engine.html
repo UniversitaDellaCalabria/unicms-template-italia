@@ -35,11 +35,13 @@
                                     placeholder='{% blocktranslate %}Words or "phrases"{% endblocktranslate %}'
                                     value="{{ request.GET.search }}">
                                 <div class="input-group-append">
+                                    {% comment %}
                                     <div class="input-group-text">
                                         <svg class="icon icon-sm icon-muted">
                                             <use xlink:href="{% static 'svg/sprite.svg' %}#it-search"></use>
                                             </svg>
                                     </div>
+                                    {% endcomment %}
                                     <button
                                         class="btn btn-primary"
                                         style="z-index: inherit"
@@ -61,11 +63,13 @@
                                     placeholder="{% trans 'Tags' %}"
                                     value="{{ request.GET.tags }}">
                                 <div class="input-group-append">
+                                    {% comment %}
                                     <div class="input-group-text">
                                         <svg class="icon icon-sm icon-muted">
                                             <use xlink:href="{% static 'svg/sprite.svg' %}#it-search"></use>
                                             </svg>
                                     </div>
+                                    {% endcomment %}
                                     <button
                                         class="btn btn-primary"
                                         style="z-index: inherit"
@@ -79,105 +83,103 @@
                         </div>
                     </div>
 
-                    <div id="collapseDiv1" class="collapse-div collapse-left-icon" role="tablist">
-                        <div class="collapse-header" id="heading1">
-                            <button
-                                data-toggle="collapse"
-                                data-target="#collapse1"
-                                aria-expanded="false"
-                                aria-controls="collapse1">
-                            {% trans "Advanced search" %}
-                            </button>
-                        </div>
+                    <div id="accordionDiv1" class="accordion accordion-left-icon">
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="heading1">
+                                <button class="accordion-button"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapse1"
+                                        aria-expanded="false"
+                                        aria-controls="collapse1">
+                                {% trans "Advanced search" %}
+                                </button>
+                            </div>
+                            <div id="collapse1"
+                                 class="accordion-collapse collapse"
+                                 data-bs-parent="#accordionDiv1"
+                                 role="region"
+                                 aria-labelledby="heading1">
+                                <div class="accordion-body pt-4 pb-0">
 
-                        <div
-                            id="collapse1"
-                            class="collapse"
-                            role="tabpanel"
-                            aria-labelledby="heading1">
-                            <div class="collapse-body pt-4 pb-0">
-
-                                <!-- Date picker -->
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-sm">
-                                            <label for="date_from" style="font-size: .7777777778rem; margin-top: -30px">
-                                                {% trans 'From publishing date' %}
-                                            </label>
-                                            <input
-                                                id="date_from"
-                                                type="date"
-                                                placeholder="{% trans 'From publishing date' %}">
-                                        </div>
-                                        <div class="col-sm mt-5 mt-sm-0">
-                                            <label for="date_from" style="font-size: .7777777778rem; margin-top: -30px">
-                                                {% trans 'To publishing date' %}
-                                            </label>
-                                            <input
-                                                id="date_to"
-                                                type="date"
-                                                placeholder="{% trans 'To publishing date' %}">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Categories -->
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-sm">
-                                            <div class="bootstrap-select-wrapper">
-                                                <label for="categories_input">
-                                                    {% trans "Category" %}
+                                    <!-- Date picker -->
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <label for="date_from" style="font-size: .7777777778rem; margin-top: -30px">
+                                                    {% trans 'From publishing date' %}
                                                 </label>
-                                                <select
-                                                    id="categories_input"
-                                                    multiple="true"
-                                                    data-multiple-separator="">
-                                                    {% cms_categories as categories %}
-                                                    {% for cat in categories %}
-                                                        <option
-                                                            value="{{ cat }}"
-                                                            title=""
-                                                            placeholder=""
-                                                            data-content="<span class='select-pill'><span class='select-pill-text'>{{ cat }}</span></span>">
-                                                        </option>
-                                                    {% endfor %}
-                                                </select>
+                                                <input
+                                                    id="date_from"
+                                                    type="date"
+                                                    placeholder="{% trans 'From publishing date' %}">
+                                            </div>
+                                            <div class="col-sm mt-5 mt-sm-0">
+                                                <label for="date_from" style="font-size: .7777777778rem; margin-top: -30px">
+                                                    {% trans 'To publishing date' %}
+                                                </label>
+                                                <input
+                                                    id="date_to"
+                                                    type="date"
+                                                    placeholder="{% trans 'To publishing date' %}">
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- web site -->
-                                {% if '*' in allowed_search_sites or allowed_search_sites|length > 1 %}
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-sm">
-                                            <div class="bootstrap-select-wrapper">
-                                                <label for="websites_input">
-                                                    {% trans "Web Site" %}
-                                                </label>
-                                                <select
-                                                    id="websites_input"
-                                                    multiple="true"
-                                                    data-multiple-separator="">
-                                                    {% cms_sites as sites %}
-                                                    {% for site, domain in sites %}
-                                                        {% if '*' in allowed_search_sites or domain in allowed_search_sites %}
-                                                        <option
-                                                            value="{{ domain }}"
-                                                            title=""
-                                                            placeholder=""
-                                                            data-content="<span class='select-pill'><span class='select-pill-text'>{{ domain }}</span></span>">
+                                    <!-- Categories -->
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <div class="select-wrapper">
+                                                    <label for="categories_input">
+                                                        {% trans "Category" %}
+                                                    </label>
+                                                      <select id="categories_input">
+                                                        <option selected="" value="">-</option>
+                                                        {% cms_categories as categories %}
+                                                        {% for cat in categories %}
+                                                        <option value="{{ cat }}">
+                                                            {{ cat }}
                                                         </option>
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </select>
+                                                        {% endfor %}
+                                                      </select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- web site -->
+                                    {% if '*' in allowed_search_sites or allowed_search_sites|length > 1 %}
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <div class="select-wrapper">
+                                                    <label for="websites_input">
+                                                        {% trans "Web Site" %}
+                                                    </label>
+                                                      <select id="websites_input">
+                                                        <option selected="" value="">-</option>
+                                                        {% cms_sites as sites %}
+                                                        {% for site, domain in sites %}
+                                                            {% if '*' in allowed_search_sites or domain in allowed_search_sites %}
+                                                            <option value="{{ domain }}">
+                                                                {{ domain }}
+                                                            </option>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                        {% cms_categories as categories %}
+                                                        {% for cat in categories %}
+                                                        <option value="{{ cat }}">
+                                                            {{ cat }}
+                                                        </option>
+                                                        {% endfor %}
+                                                      </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
                                 </div>
-                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -205,10 +207,13 @@ function get_form_paramenters(){
     if (tags) dict['tags'] = tags
 
     // categories
-    let cat_placeholder = jQuery.fn.selectpicker.defaults['noneSelectedText'] // document.getElementById('categories_input').dataset.placeholder
-    let cat_obj = document.querySelectorAll("[data-id='categories_input']")[0]
-    let categories = cat_obj.innerText.trim().split('\n').filter(function(e) { return e !== cat_placeholder })
-    dict['categories'] = categories.join(',')
+    // let cat_placeholder = jQuery.fn.selectpicker.defaults['noneSelectedText']
+    // let cat_placeholder = document.getElementById('categories_input').dataset.placeholder
+    // let cat_obj = document.querySelectorAll("[data-id='categories_input']")[0]
+    // let categories = cat_obj.innerText.trim().split('\n').filter(function(e) { return e !== cat_placeholder })
+    let categories = document.getElementById('categories_input').value
+    // dict['categories'] = categories.join(',')
+    dict['categories'] = categories
 
     // date_from
     let date_from = document.getElementById('date_from').value
@@ -228,10 +233,12 @@ function get_form_paramenters(){
 
     // websites
     {% if '*' in allowed_search_sites or allowed_search_sites|length > 1 %}
-    let site_placeholder = jQuery.fn.selectpicker.defaults['noneSelectedText'] //document.getElementById('websites_input').dataset.placeholder
-    let site_obj = document.querySelectorAll("[data-id='websites_input']")[0]
-    let sites = site_obj.innerText.trim().split('\n').filter(function(e) { return e !== site_placeholder })
-    if (sites.length > 0) dict['sites'] = sites.join(',')
+    // let site_placeholder = jQuery.fn.selectpicker.defaults['noneSelectedText'] //document.getElementById('websites_input').dataset.placeholder
+    // let site_obj = document.querySelectorAll("[data-id='websites_input']")[0]
+    // let sites = site_obj.innerText.trim().split('\n').filter(function(e) { return e !== site_placeholder })
+    let sites = document.getElementById('websites_input').value
+    // if (sites.length > 0) dict['sites'] = sites.join(',')
+    dict['sites'] = sites
     {% endif %}
 
     return dict
@@ -265,16 +272,16 @@ Vue.component('list-panel', {
                     </div>
 
                     <div class="col w-50" v-if="data.count">
-                        <div class="float-right">
+                        <div class="float-end">
                             <span>
                                 <a class="" style="color:#050b12;" v-if="data.page > 1" @click="search.prevPage()">
-                                    <span class="sr-only"> {% trans "Page" %} </span> &lt; <small>{% trans "Previous" %}</small>
+                                    <span class="visually-hidden"> {% trans "Page" %} </span> &lt; <small>{% trans "Previous" %}</small>
                                 </a>
                             </span>
 
-                            <span class="mr-2 ml-2" >[[ data.page ]] / <b>[[ data.total_pages ]]</b></span>
+                            <span class="me-2 ms-2" >[[ data.page ]] / <b>[[ data.total_pages ]]</b></span>
                             <a class="" style="color:#050b12;" @click="search.nextPage()" v-if="data.page < data.total_pages">
-                                <span class="sr-only"><small>{% trans "Page" %} </span>{% trans "Next" %} &gt;</small>
+                                <span class="visually-hidden"><small>{% trans "Page" %} </span>{% trans "Next" %} &gt;</small>
                             </a>
                         </div>
                     </div>
@@ -291,7 +298,7 @@ var search = new Vue({
     template: `
         <div class="col" v-if="newsLoaded == false">
             <div class="progress progress-indeterminate my-3">
-                <span class="sr-only">{% trans "Loading data" %}</span>
+                <span class="visually-hidden">{% trans "Loading data" %}</span>
                 <div class="progress-bar" role="progressbar"></div>
             </div>
         </div>

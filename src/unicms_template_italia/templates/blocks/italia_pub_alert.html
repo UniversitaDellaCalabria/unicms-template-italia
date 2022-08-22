@@ -13,7 +13,7 @@
     {% endif %}
     {% if publication.image_url %}
     <div class="media mb-0">
-        <img class="align-self-start mr-3 w-25"
+        <img class="align-self-start me-3 w-25"
              src="{{ publication.image_url }}"
              title="{{ publication.image_title }}"
              alt="{{ publication.image_description }}">
@@ -26,7 +26,7 @@
     {% endif %}
     {% if publication.related_links %}
     <hr>
-    <ul class="pl-0" style="list-style: none">
+    <ul class="ps-0" style="list-style: none">
     {% for link in publication.related_links %}
         <li class="mb-3">
             <a href="{{ link.url }}">

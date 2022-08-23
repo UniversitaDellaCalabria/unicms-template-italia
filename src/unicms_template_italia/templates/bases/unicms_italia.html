@@ -1335,9 +1335,7 @@ col-10 offset-2 col-lg-12 offset-lg-0
 
 {% block extra_scripts %}
 {{ block.super }}
-{% comment %}
 <script src="{% unicms_template_italia_static_path 'js/passive_listeners.js' %}"></script>
-{% endcomment %}
 <script src="{% unicms_template_italia_static_path 'js/deferred_iframe_src.js' %}"></script>
 {% settings_value "CMS_PATH_PREFIX" as cms_path_prefix %}
 {% include "inits/search-input-handler.html" with cms_path_prefix=cms_path_prefix %}

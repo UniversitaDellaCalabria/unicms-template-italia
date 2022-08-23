@@ -16,7 +16,7 @@
         aria-expanded="false">
         <div class="it-access-top-wrapper">
             <svg class="icon icon-md">
-                <use xlink:href="{% static 'svg/sprite.svg' %}#it-burger"></use>
+                <use xlink:href="{% static 'svg/sprites.svg' %}#it-burger"></use>
             </svg>
             <span class="m-2">
                 {% trans "Hi" %}, <b>{{ request.user.first_name }}</b>
@@ -34,7 +34,7 @@
                         <li>
                             <a class="list-item" href="{{ editorial_board_base }}" target="_blank">
                               <svg class="icon icon-md icon-dark">
-                                <use xlink:href="{% static 'svg/sprite.svg' %}#it-settings"></use>
+                                <use xlink:href="{% static 'svg/sprites.svg' %}#it-settings"></use>
                               </svg>
                                 <span class="m-2">{% trans "Editorial Board Backend" %}</span>
                             </a>
@@ -44,7 +44,7 @@
                         <li>
                             <a class="list-item" href="{{ editorial_board_add_news }}" target="_blank">
                               <svg class="icon icon-md icon-dark">
-                                <use xlink:href="{% static 'svg/sprite.svg' %}#it-plus-circle"></use>
+                                <use xlink:href="{% static 'svg/sprites.svg' %}#it-plus-circle"></use>
                               </svg>
                                 <span class="m-2">{% trans "Add news in this webpath" %}</span>
                             </a>
@@ -85,7 +85,7 @@
                         <li>
                             <a class="list-item" href="{{ logout_url|default_if_none:'logout' }}">
                               <svg class="icon icon-md icon-dark">
-                                <use xlink:href="{% static 'svg/sprite.svg' %}#it-close-circle"></use>
+                                <use xlink:href="{% static 'svg/sprites.svg' %}#it-close-circle"></use>
                               </svg>
                                 <span class="m-2">{% trans "Logout" %}</span>
                             </a>

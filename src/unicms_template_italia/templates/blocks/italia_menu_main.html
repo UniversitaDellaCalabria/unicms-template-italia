@@ -18,7 +18,7 @@
                             data-bs-toggle="navbarcollapsible"
                             data-bs-target="#nav10">
                         <svg class="icon">
-                            <use xlink:href="{% static 'svg/sprite.svg' %}#it-burger"></use>
+                            <use xlink:href="{% static 'svg/sprites.svg' %}#it-burger"></use>
                         </svg>
                     </button>
                     <div class="navbar-collapsable" id="nav10" style="display: none;">
@@ -26,7 +26,7 @@
                         <div class="close-div">
                             <button class="btn close-menu" type="button">
                                 <svg class="icon">
-                                    <use xlink:href="{% static 'svg/sprite.svg' %}#it-close-big"></use>
+                                    <use xlink:href="{% static 'svg/sprites.svg' %}#it-close-big"></use>
                                 </svg>
                                 <span class="visually-hidden">
                                     {% trans "Close" %}
@@ -48,7 +48,7 @@
                                        <span>{{ item.name }}</span>
                                        {% if item.get_childs %}
                                         <svg class="icon icon-xs icon-white">
-                                            <use xlink:href="{% static 'svg/sprite.svg' %}#it-expand"></use>
+                                            <use xlink:href="{% static 'svg/sprites.svg' %}#it-expand"></use>
                                         </svg>
                                         {% endif %}
                                     </a>

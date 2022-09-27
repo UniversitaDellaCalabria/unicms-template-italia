@@ -10,6 +10,7 @@
      class="accordion {% block collapse_icon %}accordion-left-icon{% endblock collapse_icon %}">
 
     <div class="accordion-item">
+        {% block collapse_header %}
         <div class="accordion-header" id="heading-{{ id }}-lft">
             <button class="accordion-button"
                     type="button"
@@ -18,11 +19,10 @@
                     aria-expanded="false"
                     aria-controls="collapse-{{ id }}-lft"
                     role="tab">
-                {% block collapse_header %}
-                    {{ publication.title }}
-                {% endblock collapse_header %}
+                {{ publication.title }}
             </button>
         </div>
+        {% endblock collapse_header %}
         <div id="collapse-{{ id }}-lft"
              class="accordion-collapse collapse"
              role="region"

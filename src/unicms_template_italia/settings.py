@@ -137,4 +137,4 @@ PINTEREST_ENDPOINT = 'https://www.pinterest.com/pin/create/button/?url='
 
 # CDN FOR STATICS
 UNICMS_TEMPLATE_ITALIA_USE_CDN = False
-UNICMS_TEMPLATE_ITALIA_CDN = 'https://cdn.jsdelivr.net/gh/UniversitaDellaCalabria/unicms-template-italia@1.0/src/unicms_template_italia/static'
+UNICMS_TEMPLATE_ITALIA_CDN = 'https://cdn.jsdelivr.net/gh/UniversitaDellaCalabria/unicms-template-italia@1.0.1/src/unicms_template_italia/static'

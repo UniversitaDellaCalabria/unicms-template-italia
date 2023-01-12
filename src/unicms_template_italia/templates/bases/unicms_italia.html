@@ -27,12 +27,33 @@
 <!-- Return to Agid native template -->
 {% block extra_head %}
     {{ block.super }}
+
     {% block head_inits %}
-    {% include "inits/vue-init.html" %}
-    {% include "inits/owl-carousel-init.html" %}
+        {% include "inits/vue-init.html" %}
+        {% include "inits/owl-carousel-init.html" %}
     {% endblock head_inits %}
 
-    {% block social_tags %}{% endblock social_tags %}
+    {% block html_head %}
+        {% load_blocks section="html-head" as html_head %}
+        {{ html_head }}
+    {% endblock html_head %}
+
+    {% block social_tags %}
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+    <meta property="og:image" content="https://{{ request.get_host }}/static/images/logo.png">
+    <meta property="og:image:alt" content="{{ page.title }}" />
+    <meta property="og:image:width" content="330" />
+    <meta property="og:image:height" content="330" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+    <meta name="twitter:image" content="https://{{ request.get_host }}/static/images/logo.png">
+    <meta name="twitter:image:alt" content="{{ page.title }}">
+    {% endblock social_tags %}
 {% endblock extra_head %}
 
 <!-- Page Title -->
@@ -1339,4 +1360,9 @@ col-10 offset-2 col-lg-12 offset-lg-0
 <script src="{% unicms_template_italia_static_path 'js/deferred_iframe_src.js' %}"></script>
 {% settings_value "CMS_PATH_PREFIX" as cms_path_prefix %}
 {% include "inits/search-input-handler.html" with cms_path_prefix=cms_path_prefix %}
+
+{% block html_bottom %}
+    {% load_blocks section="html-bottom" as html_bottom %}
+    {{ html_bottom }}
+{% endblock html_bottom %}
 {% endblock extra_scripts %}

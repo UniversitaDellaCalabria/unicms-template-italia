@@ -1,8 +1,8 @@
 from django.utils.translation import gettext_lazy as _
 
 CMS_TEMPLATE_BLOCK_SECTIONS = (
-                               ('pre-head', _('Pre-Head')),
-                               ('head', _('Head')),
+                               ('html-head', _('HTML Head')),
+                               ('html-bottom', _('HTML Bottom')),
 
                                ('menu-1', _('Menu-1')),
                                ('menu-2', _('Menu-2')),
@@ -11,10 +11,6 @@ CMS_TEMPLATE_BLOCK_SECTIONS = (
 
                                ('banner', _('Banner')),
                                ('slider-2', _('Slider-2')),
-
-                               ('pre-footer', _('Pre-Footer')),
-                               ('footer', _('Footer')),
-                               ('post-footer', _('Post-Footer')),
 
                                # breadcrumbs
                                ('breadcrumbs', _('Breadcrumbs')),
@@ -137,4 +133,4 @@ PINTEREST_ENDPOINT = 'https://www.pinterest.com/pin/create/button/?url='
 
 # CDN FOR STATICS
 UNICMS_TEMPLATE_ITALIA_USE_CDN = False
-UNICMS_TEMPLATE_ITALIA_CDN = 'https://cdn.jsdelivr.net/gh/UniversitaDellaCalabria/unicms-template-italia@1.0.3/src/unicms_template_italia/static'
+UNICMS_TEMPLATE_ITALIA_CDN = 'https://cdn.jsdelivr.net/gh/UniversitaDellaCalabria/unicms-template-italia@1.1.0/src/unicms_template_italia/static'

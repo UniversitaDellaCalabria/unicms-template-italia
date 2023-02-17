@@ -115,7 +115,7 @@
                                                     placeholder="{% trans 'From publishing date' %}">
                                             </div>
                                             <div class="col-sm mt-5 mt-sm-0">
-                                                <label for="date_from" style="font-size: .7777777778rem; margin-top: -30px">
+                                                <label for="date_to" style="font-size: .7777777778rem; margin-top: -30px">
                                                     {% trans 'To publishing date' %}
                                                 </label>
                                                 <input
@@ -166,12 +166,6 @@
                                                                 {{ domain }}
                                                             </option>
                                                             {% endif %}
-                                                        {% endfor %}
-                                                        {% cms_categories as categories %}
-                                                        {% for cat in categories %}
-                                                        <option value="{{ cat }}">
-                                                            {{ cat }}
-                                                        </option>
                                                         {% endfor %}
                                                       </select>
                                                 </div>

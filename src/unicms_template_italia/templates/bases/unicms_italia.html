@@ -29,8 +29,7 @@
     {% endblock head_inits %}
 
     {% block html_head %}
-        {% load_blocks  section="html-head" as html_head %}
-        {{ html_head }}
+        {% load_blocks section="html-head" %}
     {% endblock html_head %}
 
     {% block social_tags %}
@@ -131,7 +130,7 @@ col-10 offset-2 col-lg-12 offset-lg-0
 
 <!-- Main Menu -->
 {% block main_menu %}
-    {% load_blocks  section="menu-1" %}
+    {% load_blocks section="menu-1" %}
 {% endblock main_menu %}
 
 <!-- Container -->
@@ -139,65 +138,65 @@ col-10 offset-2 col-lg-12 offset-lg-0
 
     <!-- Main Banner-->
     {% block banner %}
-        {% load_blocks  section="banner" %}
+        {% load_blocks section="banner" %}
     {% endblock banner %}
     <!-- end Main Banner-->
 
     <!-- Menu 2-->
     {% block menu-2 %}
-        {% load_blocks  section="menu-2" %}
+        {% load_blocks section="menu-2" %}
     {% endblock menu-2 %}
     <!-- end Menu 2-->
 
     <!-- Breadcrumbs -->
     {% block breadcrumbs %}
-        {% load_blocks  section="breadcrumbs" %}
+        {% load_blocks section="breadcrumbs" %}
     {% endblock breadcrumbs %}
     <!-- end Breadcrumbs -->
 
     <!-- Section 1 -->
     {% block section_1 %}
-    {% blocks_in_position blocks=page_blocks section="section-1" as section_1 %}
+    {% blocks_in_position section="section-1" as section_1 %}
     {% if section_1 %}
-        {% load_blocks  section="1-top-a" as 1_top_a %}
-        {% load_blocks  section="1-top-b" as 1_top_b %}
-        {% load_blocks  section="1-top-c" as 1_top_c %}
+        {% load_blocks section="1-top-a" as 1_top_a %}
+        {% load_blocks section="1-top-b" as 1_top_b %}
+        {% load_blocks section="1-top-c" as 1_top_c %}
 
-        {% load_blocks  section="1-mid-top-a" as 1_mid_top_a %}
-        {% load_blocks  section="1-mid-top-b" as 1_mid_top_b %}
-        {% load_blocks  section="1-mid-top-c" as 1_mid_top_c %}
+        {% load_blocks section="1-mid-top-a" as 1_mid_top_a %}
+        {% load_blocks section="1-mid-top-b" as 1_mid_top_b %}
+        {% load_blocks section="1-mid-top-c" as 1_mid_top_c %}
 
-        {% load_blocks  section="1-left-a" as 1_left_a %}
-        {% load_blocks  section="1-left-b" as 1_left_b %}
+        {% load_blocks section="1-left-a" as 1_left_a %}
+        {% load_blocks section="1-left-b" as 1_left_b %}
 
-        {% load_blocks  section="1-center-top-a" as 1_center_top_a %}
-        {% load_blocks  section="1-center-top-b" as 1_center_top_b %}
-        {% load_blocks  section="1-center-top-c" as 1_center_top_c %}
+        {% load_blocks section="1-center-top-a" as 1_center_top_a %}
+        {% load_blocks section="1-center-top-b" as 1_center_top_b %}
+        {% load_blocks section="1-center-top-c" as 1_center_top_c %}
 
-        {% load_blocks  section="1-center-mid-top-a" as 1_center_mid_top_a %}
-        {% load_blocks  section="1-center-mid-top-b" as 1_center_mid_top_b %}
-        {% load_blocks  section="1-center-mid-top-c" as 1_center_mid_top_c %}
+        {% load_blocks section="1-center-mid-top-a" as 1_center_mid_top_a %}
+        {% load_blocks section="1-center-mid-top-b" as 1_center_mid_top_b %}
+        {% load_blocks section="1-center-mid-top-c" as 1_center_mid_top_c %}
 
-        {% load_blocks  section="1-center-content" as 1_center_content %}
+        {% load_blocks section="1-center-content" as 1_center_content %}
 
-        {% load_blocks  section="1-center-mid-bottom-a" as 1_center_mid_bottom_a %}
-        {% load_blocks  section="1-center-mid-bottom-b" as 1_center_mid_bottom_b %}
-        {% load_blocks  section="1-center-mid-bottom-c" as 1_center_mid_bottom_c %}
+        {% load_blocks section="1-center-mid-bottom-a" as 1_center_mid_bottom_a %}
+        {% load_blocks section="1-center-mid-bottom-b" as 1_center_mid_bottom_b %}
+        {% load_blocks section="1-center-mid-bottom-c" as 1_center_mid_bottom_c %}
 
-        {% load_blocks  section="1-center-bottom-a" as 1_center_bottom_a %}
-        {% load_blocks  section="1-center-bottom-b" as 1_center_bottom_b %}
-        {% load_blocks  section="1-center-bottom-c" as 1_center_bottom_c %}
+        {% load_blocks section="1-center-bottom-a" as 1_center_bottom_a %}
+        {% load_blocks section="1-center-bottom-b" as 1_center_bottom_b %}
+        {% load_blocks section="1-center-bottom-c" as 1_center_bottom_c %}
 
-        {% load_blocks  section="1-right-a" as 1_right_a %}
-        {% load_blocks  section="1-right-b" as 1_right_b %}
+        {% load_blocks section="1-right-a" as 1_right_a %}
+        {% load_blocks section="1-right-b" as 1_right_b %}
 
-        {% load_blocks  section="1-mid-bottom-a" as 1_mid_bottom_a %}
-        {% load_blocks  section="1-mid-bottom-b" as 1_mid_bottom_b %}
-        {% load_blocks  section="1-mid-bottom-c" as 1_mid_bottom_c %}
+        {% load_blocks section="1-mid-bottom-a" as 1_mid_bottom_a %}
+        {% load_blocks section="1-mid-bottom-b" as 1_mid_bottom_b %}
+        {% load_blocks section="1-mid-bottom-c" as 1_mid_bottom_c %}
 
-        {% load_blocks  section="1-bottom-a" as 1_bottom_a %}
-        {% load_blocks  section="1-bottom-b" as 1_bottom_b %}
-        {% load_blocks  section="1-bottom-c" as 1_bottom_c %}
+        {% load_blocks section="1-bottom-a" as 1_bottom_a %}
+        {% load_blocks section="1-bottom-b" as 1_bottom_b %}
+        {% load_blocks section="1-bottom-c" as 1_bottom_c %}
 
         <div class="{% block section_1_classes %}py-5{% endblock %}">
             <div class="container">
@@ -547,47 +546,47 @@ col-10 offset-2 col-lg-12 offset-lg-0
 
     <!-- Section 2 -->
     {% block section_2 %}
-    {% blocks_in_position blocks=page_blocks section="section-2" as section_2 %}
+    {% blocks_in_position section="section-2" as section_2 %}
     {% if section_2 %}
-        {% load_blocks  section="2-top-a" as 2_top_a %}
-        {% load_blocks  section="2-top-b" as 2_top_b %}
-        {% load_blocks  section="2-top-c" as 2_top_c %}
+        {% load_blocks section="2-top-a" as 2_top_a %}
+        {% load_blocks section="2-top-b" as 2_top_b %}
+        {% load_blocks section="2-top-c" as 2_top_c %}
 
-        {% load_blocks  section="2-mid-top-a" as 2_mid_top_a %}
-        {% load_blocks  section="2-mid-top-b" as 2_mid_top_b %}
-        {% load_blocks  section="2-mid-top-c" as 2_mid_top_c %}
+        {% load_blocks section="2-mid-top-a" as 2_mid_top_a %}
+        {% load_blocks section="2-mid-top-b" as 2_mid_top_b %}
+        {% load_blocks section="2-mid-top-c" as 2_mid_top_c %}
 
-        {% load_blocks  section="2-left-a" as 2_left_a %}
-        {% load_blocks  section="2-left-b" as 2_left_b %}
+        {% load_blocks section="2-left-a" as 2_left_a %}
+        {% load_blocks section="2-left-b" as 2_left_b %}
 
-        {% load_blocks  section="2-center-top-a" as 2_center_top_a %}
-        {% load_blocks  section="2-center-top-b" as 2_center_top_b %}
-        {% load_blocks  section="2-center-top-c" as 2_center_top_c %}
+        {% load_blocks section="2-center-top-a" as 2_center_top_a %}
+        {% load_blocks section="2-center-top-b" as 2_center_top_b %}
+        {% load_blocks section="2-center-top-c" as 2_center_top_c %}
 
-        {% load_blocks  section="2-center-mid-top-a" as 2_center_mid_top_a %}
-        {% load_blocks  section="2-center-mid-top-b" as 2_center_mid_top_b %}
-        {% load_blocks  section="2-center-mid-top-c" as 2_center_mid_top_c %}
+        {% load_blocks section="2-center-mid-top-a" as 2_center_mid_top_a %}
+        {% load_blocks section="2-center-mid-top-b" as 2_center_mid_top_b %}
+        {% load_blocks section="2-center-mid-top-c" as 2_center_mid_top_c %}
 
-        {% load_blocks  section="2-center-content" as 2_center_content %}
+        {% load_blocks section="2-center-content" as 2_center_content %}
 
-        {% load_blocks  section="2-center-mid-bottom-a" as 2_center_mid_bottom_a %}
-        {% load_blocks  section="2-center-mid-bottom-b" as 2_center_mid_bottom_b %}
-        {% load_blocks  section="2-center-mid-bottom-c" as 2_center_mid_bottom_c %}
+        {% load_blocks section="2-center-mid-bottom-a" as 2_center_mid_bottom_a %}
+        {% load_blocks section="2-center-mid-bottom-b" as 2_center_mid_bottom_b %}
+        {% load_blocks section="2-center-mid-bottom-c" as 2_center_mid_bottom_c %}
 
-        {% load_blocks  section="2-center-bottom-a" as 2_center_bottom_a %}
-        {% load_blocks  section="2-center-bottom-b" as 2_center_bottom_b %}
-        {% load_blocks  section="2-center-bottom-c" as 2_center_bottom_c %}
+        {% load_blocks section="2-center-bottom-a" as 2_center_bottom_a %}
+        {% load_blocks section="2-center-bottom-b" as 2_center_bottom_b %}
+        {% load_blocks section="2-center-bottom-c" as 2_center_bottom_c %}
 
-        {% load_blocks  section="2-right-a" as 2_right_a %}
-        {% load_blocks  section="2-right-b" as 2_right_b %}
+        {% load_blocks section="2-right-a" as 2_right_a %}
+        {% load_blocks section="2-right-b" as 2_right_b %}
 
-        {% load_blocks  section="2-mid-bottom-a" as 2_mid_bottom_a %}
-        {% load_blocks  section="2-mid-bottom-b" as 2_mid_bottom_b %}
-        {% load_blocks  section="2-mid-bottom-c" as 2_mid_bottom_c %}
+        {% load_blocks section="2-mid-bottom-a" as 2_mid_bottom_a %}
+        {% load_blocks section="2-mid-bottom-b" as 2_mid_bottom_b %}
+        {% load_blocks section="2-mid-bottom-c" as 2_mid_bottom_c %}
 
-        {% load_blocks  section="2-bottom-a" as 2_bottom_a %}
-        {% load_blocks  section="2-bottom-b" as 2_bottom_b %}
-        {% load_blocks  section="2-bottom-c" as 2_bottom_c %}
+        {% load_blocks section="2-bottom-a" as 2_bottom_a %}
+        {% load_blocks section="2-bottom-b" as 2_bottom_b %}
+        {% load_blocks section="2-bottom-c" as 2_bottom_c %}
 
         <div class="{% block section_2_classes %}py-5 neutral-2-bg{% endblock %}">
             <div class="container">
@@ -936,47 +935,47 @@ col-10 offset-2 col-lg-12 offset-lg-0
 
     <!-- Section 3 -->
     {% block section_3 %}
-    {% blocks_in_position blocks=page_blocks section="section-3" as section_3 %}
+    {% blocks_in_position section="section-3" as section_3 %}
     {% if section_3 %}
-        {% load_blocks  section="3-top-a" as 3_top_a %}
-        {% load_blocks  section="3-top-b" as 3_top_b %}
-        {% load_blocks  section="3-top-c" as 3_top_c %}
+        {% load_blocks section="3-top-a" as 3_top_a %}
+        {% load_blocks section="3-top-b" as 3_top_b %}
+        {% load_blocks section="3-top-c" as 3_top_c %}
 
-        {% load_blocks  section="3-mid-top-a" as 3_mid_top_a %}
-        {% load_blocks  section="3-mid-top-b" as 3_mid_top_b %}
-        {% load_blocks  section="3-mid-top-c" as 3_mid_top_c %}
+        {% load_blocks section="3-mid-top-a" as 3_mid_top_a %}
+        {% load_blocks section="3-mid-top-b" as 3_mid_top_b %}
+        {% load_blocks section="3-mid-top-c" as 3_mid_top_c %}
 
-        {% load_blocks  section="3-left-a" as 3_left_a %}
-        {% load_blocks  section="3-left-b" as 3_left_b %}
+        {% load_blocks section="3-left-a" as 3_left_a %}
+        {% load_blocks section="3-left-b" as 3_left_b %}
 
-        {% load_blocks  section="3-center-top-a" as 3_center_top_a %}
-        {% load_blocks  section="3-center-top-b" as 3_center_top_b %}
-        {% load_blocks  section="3-center-top-c" as 3_center_top_c %}
+        {% load_blocks section="3-center-top-a" as 3_center_top_a %}
+        {% load_blocks section="3-center-top-b" as 3_center_top_b %}
+        {% load_blocks section="3-center-top-c" as 3_center_top_c %}
 
-        {% load_blocks  section="3-center-mid-top-a" as 3_center_mid_top_a %}
-        {% load_blocks  section="3-center-mid-top-b" as 3_center_mid_top_b %}
-        {% load_blocks  section="3-center-mid-top-c" as 3_center_mid_top_c %}
+        {% load_blocks section="3-center-mid-top-a" as 3_center_mid_top_a %}
+        {% load_blocks section="3-center-mid-top-b" as 3_center_mid_top_b %}
+        {% load_blocks section="3-center-mid-top-c" as 3_center_mid_top_c %}
 
-        {% load_blocks  section="3-center-content" as 3_center_content %}
+        {% load_blocks section="3-center-content" as 3_center_content %}
 
-        {% load_blocks  section="3-center-mid-bottom-a" as 3_center_mid_bottom_a %}
-        {% load_blocks  section="3-center-mid-bottom-b" as 3_center_mid_bottom_b %}
-        {% load_blocks  section="3-center-mid-bottom-c" as 3_center_mid_bottom_c %}
+        {% load_blocks section="3-center-mid-bottom-a" as 3_center_mid_bottom_a %}
+        {% load_blocks section="3-center-mid-bottom-b" as 3_center_mid_bottom_b %}
+        {% load_blocks section="3-center-mid-bottom-c" as 3_center_mid_bottom_c %}
 
-        {% load_blocks  section="3-center-bottom-a" as 3_center_bottom_a %}
-        {% load_blocks  section="3-center-bottom-b" as 3_center_bottom_b %}
-        {% load_blocks  section="3-center-bottom-c" as 3_center_bottom_c %}
+        {% load_blocks section="3-center-bottom-a" as 3_center_bottom_a %}
+        {% load_blocks section="3-center-bottom-b" as 3_center_bottom_b %}
+        {% load_blocks section="3-center-bottom-c" as 3_center_bottom_c %}
 
-        {% load_blocks  section="3-right-a" as 3_right_a %}
-        {% load_blocks  section="3-right-b" as 3_right_b %}
+        {% load_blocks section="3-right-a" as 3_right_a %}
+        {% load_blocks section="3-right-b" as 3_right_b %}
 
-        {% load_blocks  section="3-mid-bottom-a" as 3_mid_bottom_a %}
-        {% load_blocks  section="3-mid-bottom-b" as 3_mid_bottom_b %}
-        {% load_blocks  section="3-mid-bottom-c" as 3_mid_bottom_c %}
+        {% load_blocks section="3-mid-bottom-a" as 3_mid_bottom_a %}
+        {% load_blocks section="3-mid-bottom-b" as 3_mid_bottom_b %}
+        {% load_blocks section="3-mid-bottom-c" as 3_mid_bottom_c %}
 
-        {% load_blocks  section="3-bottom-a" as 3_bottom_a %}
-        {% load_blocks  section="3-bottom-b" as 3_bottom_b %}
-        {% load_blocks  section="3-bottom-c" as 3_bottom_c %}
+        {% load_blocks section="3-bottom-a" as 3_bottom_a %}
+        {% load_blocks section="3-bottom-b" as 3_bottom_b %}
+        {% load_blocks section="3-bottom-c" as 3_bottom_c %}
 
         <div class="{% block section_3_classes %}py-5{% endblock %}">
             <div class="container">
@@ -1359,7 +1358,6 @@ col-10 offset-2 col-lg-12 offset-lg-0
 {% include "inits/search-input-handler.html" with cms_path_prefix=cms_path_prefix %}
 
 {% block html_bottom %}
-    {% load_blocks  section="html-bottom" as html_bottom %}
-    {{ html_bottom }}
+    {% load_blocks section="html-bottom" %}
 {% endblock html_bottom %}
 {% endblock extra_scripts %}

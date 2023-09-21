@@ -3,6 +3,7 @@
 
 {% load unicms_templates %}
 
+{% settings_value "CAROUSEL_HERO_AUTOPLAY_TIMEOUT" as carousel_timeout %}
 {% random_id as id %}
 
 {% if carousel_items %}
@@ -86,7 +87,7 @@ $(document).ready(function() {
       slideSpeed : 300,
       paginationSpeed : 400,
       autoplay: true,
-      autoplayTimeout: 5000,
+      autoplayTimeout: {{ carousel_timeout|default:5000 }},
       items : 1,
       itemsDesktop : false,
       itemsDesktopSmall : false,

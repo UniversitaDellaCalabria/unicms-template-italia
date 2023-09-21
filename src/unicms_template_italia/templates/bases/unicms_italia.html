@@ -14,6 +14,7 @@
 {% load unicms_publications %}
 {% load unicms_templates %}
 
+
 {% block page_meta_description %}{{ webpath.meta_description }}{% endblock page_meta_description %}
 {% block page_meta_keywords %}{{ webpath.meta_keywords }}{% endblock page_meta_keywords %}
 {% block page_meta_robots %}{{ webpath.robots }}{% endblock page_meta_robots %}
@@ -28,8 +29,7 @@
     {% endblock head_inits %}
 
     {% block html_head %}
-        {% load_blocks section="html-head" as html_head %}
-        {{ html_head }}
+        {% load_blocks section="html-head" %}
     {% endblock html_head %}
 
     {% block social_tags %}
@@ -1348,6 +1348,8 @@ col-10 offset-2 col-lg-12 offset-lg-0
 {% endblock container %}
 <!-- end Container -->
 
+
+
 {% block extra_scripts %}
 {{ block.super }}
 <script src="{% unicms_template_italia_static_path 'js/passive_listeners.js' %}"></script>
@@ -1356,7 +1358,6 @@ col-10 offset-2 col-lg-12 offset-lg-0
 {% include "inits/search-input-handler.html" with cms_path_prefix=cms_path_prefix %}
 
 {% block html_bottom %}
-    {% load_blocks section="html-bottom" as html_bottom %}
-    {{ html_bottom }}
+    {% load_blocks section="html-bottom" %}
 {% endblock html_bottom %}
 {% endblock extra_scripts %}

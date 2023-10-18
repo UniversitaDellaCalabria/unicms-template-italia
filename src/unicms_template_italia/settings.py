@@ -124,6 +124,7 @@ CMS_TEMPLATE_BLOCK_SECTIONS = (
 # SOCIAL_SHARE_ENDPOINTS
 TWITTER_ENDPOINT = 'https://twitter.com/intent/tweet?text='
 FACEBOOK_ENDPOINT = 'https://www.facebook.com/sharer/sharer.php?u='
+INSTAGRAM_ENDPOINT = 'https://www.instagram.com/?url='
 GPLUS_ENDPOINT = 'https://plus.google.com/share?url='
 MAIL_ENDPOINT = 'mailto:?body='
 LINKEDIN_ENDPOINT = 'https://www.linkedin.com/shareArticle?mini=true&url='

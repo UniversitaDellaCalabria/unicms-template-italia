@@ -17,7 +17,7 @@ PKG_NAME = 'unicms_template_italia'
 
 setup(
     name=PKG_NAME,
-    version='1.3.1',
+    version='1.3.2',
 
     packages=[PKG_NAME],
     package_dir={PKG_NAME: f"{SRC_FOLDER}/{PKG_NAME}"},
@@ -39,6 +39,8 @@ setup(
         'Framework :: Django',
         'Framework :: Django :: 2.0',
         'Framework :: Django :: 3.0',
+        'Framework :: Django :: 4.0',
+        'Framework :: Django :: 5.0',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
@@ -46,7 +48,7 @@ setup(
         'Programming Language :: Python :: 3',
     ],
     install_requires=[
-        'django>=2.0,<5.0',
+        'django>=2.0,<6.0',
         'design-django-theme'
     ],
 )

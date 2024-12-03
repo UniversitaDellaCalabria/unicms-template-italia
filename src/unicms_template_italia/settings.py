@@ -16,7 +16,9 @@ CMS_TEMPLATE_BLOCK_SECTIONS = (
                                ('breadcrumbs', _('Breadcrumbs')),
 
                                # section 1
-                                ('1-top-a', _('Section 1 - Top A')),
+                               ('section-1',
+                                (
+                                 ('1-top-a', _('Section 1 - Top A')),
                                  ('1-top-b', _('Section 1 - Top B')),
                                  ('1-top-c', _('Section 1 - Top C')),
                                  ('1-mid-top-a', _('Section 1 - Middle Top A')),
@@ -45,8 +47,12 @@ CMS_TEMPLATE_BLOCK_SECTIONS = (
                                  ('1-bottom-a', _('Section 1 - Bottom A')),
                                  ('1-bottom-b', _('Section 1 - Bottom B')),
                                  ('1-bottom-c', _('Section 1 - Bottom C')),
+                                )
+                               ),
 
                                # section 2
+                               ('section-2',
+                                (
                                   ('2-top-a', _('Section 2 - Top A')),
                                   ('2-top-b', _('Section 2 - Top B')),
                                   ('2-top-c', _('Section 2 - Top C')),
@@ -76,8 +82,11 @@ CMS_TEMPLATE_BLOCK_SECTIONS = (
                                   ('2-bottom-a', _('Section 2 - Bottom A')),
                                   ('2-bottom-b', _('Section 2 - Bottom B')),
                                   ('2-bottom-c', _('Section 2 - Bottom C')),
+                                )
+                               ),
 
-                                  # section 3
+                               ('section-3',
+                                (
                                   ('3-top-a', _('Section 3 - Top A')),
                                   ('3-top-b', _('Section 3 - Top B')),
                                   ('3-top-c', _('Section 3 - Top C')),
@@ -107,6 +116,8 @@ CMS_TEMPLATE_BLOCK_SECTIONS = (
                                   ('3-bottom-a', _('Section 3 - Bottom A')),
                                   ('3-bottom-b', _('Section 3 - Bottom B')),
                                   ('3-bottom-c', _('Section 3 - Bottom C')),
+                                )
+                               ),
                               )
 
 
@@ -123,4 +134,4 @@ PINTEREST_ENDPOINT = 'https://www.pinterest.com/pin/create/button/?url='
 
 # CDN FOR STATICS
 UNICMS_TEMPLATE_ITALIA_USE_CDN = False
-UNICMS_TEMPLATE_ITALIA_CDN = 'https://cdn.jsdelivr.net/gh/UniversitaDellaCalabria/unicms-template-italia@1.3.2/src/unicms_template_italia/static'
+UNICMS_TEMPLATE_ITALIA_CDN = 'https://cdn.jsdelivr.net/gh/UniversitaDellaCalabria/unicms-template-italia@1.3.3/src/unicms_template_italia/static'

@@ -62,7 +62,7 @@
 
 <!-- Header slim wrapper -->
 {% block header_slim_top_left %}
-{% if request.user.is_staff %}
+{% if request.user.is_authenticated %}
 {% include "components/italia_editorialboard_frontend_menu.html" %}
 {% endif %}
 {% endblock header_slim_top_left %}

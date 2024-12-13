@@ -30,6 +30,7 @@
             <div class="col-12">
                 <div class="link-list-wrapper">
                     <ul class="link-list">
+                        {% if request.user.is_staff %}
                         {% if not preview_mode %}
                         <li>
                             <a class="list-item" href="{{ editorial_board_base }}" target="_blank">
@@ -82,6 +83,7 @@
                             </div>
                         </li>
                         <hr>
+                        {% endif %}
                         <li>
                             <a class="list-item" href="{{ logout_url|default_if_none:'logout' }}">
                               <svg class="icon icon-md icon-dark">

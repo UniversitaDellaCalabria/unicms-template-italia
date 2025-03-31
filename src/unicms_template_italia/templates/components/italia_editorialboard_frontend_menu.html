@@ -54,10 +54,9 @@
                         {% endif %}
                         <li>
                             <div class="toggles">
-                                <label for="toggleDraft">
+                                <label>
                                     {% trans "Draft Mode" %}
                                     <input type="checkbox"
-                                           id="toggleDraft"
                                            {% if request.session.draft_view_mode %}
                                             checked
                                             {% endif %}
@@ -70,10 +69,9 @@
                         {% endif %}
                         <li>
                             <div class="toggles">
-                                <label for="toggleBlocks">
+                                <label>
                                     {% trans "Show/Hide blocks" %}
                                     <input type="checkbox"
-                                           id="toggleBlocks"
                                            {% if request.session.show_template_blocks_sections %}
                                             checked
                                             {% endif %}

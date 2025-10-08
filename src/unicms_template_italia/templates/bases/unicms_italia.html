@@ -17,7 +17,7 @@
 
 {% block page_meta_description %}{{ webpath.meta_description }}{% endblock page_meta_description %}
 {% block page_meta_keywords %}{{ webpath.meta_keywords }}{% endblock page_meta_keywords %}
-{% block page_meta_robots %}{{ webpath.robots }}{% endblock page_meta_robots %}
+{% block page_meta_robots %}{% if request.GET.lang %}noindex,nofollow{% else %}{{ webpath.robots }}{% endif %}{% endblock page_meta_robots %}
 
 <!-- Return to Agid native template -->
 {% block extra_head %}

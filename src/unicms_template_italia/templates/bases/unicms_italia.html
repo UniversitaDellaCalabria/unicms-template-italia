@@ -26,6 +26,7 @@
     {% block head_inits %}
         {% include "inits/vue-init.html" %}
         {% include "inits/owl-carousel-init.html" %}
+        <script src="{% unicms_template_italia_static_path 'js/external_sources_consent.min.js' %}"></script>
     {% endblock head_inits %}
 
     {% block html_head %}
@@ -1319,33 +1320,8 @@ col-10 offset-2 col-lg-12 offset-lg-0
     {% endif %}
     {% endblock section_3 %}
     <!-- end Section 3 -->
-
-    {% comment %}
-    <div class="cookiebar">
-        <p>{% trans "Questo sito utilizza cookie tecnici, analytics e di terze parti." %}
-           <br>
-           {% trans "Proseguendo nella navigazione accetti l’utilizzo dei cookie." %}
-        </p>
-        <div class="cookiebar-buttons">
-            <a href="#" class="cookiebar-btn">
-                {% trans "Preferenze" %} <span class="visually-hidden">cookies</span>
-            </a>
-            <button data-accept="cookiebar" class="cookiebar-btn cookiebar-confirm">
-                {% trans "Accetto" %}<span class="visually-hidden"> i cookies</span>
-            </button>
-        </div>
-    </div>
-    {% endcomment %}
-
-    <a href="#" aria-label="Torna su" data-bs-toggle="backtotop" class="back-to-top back-to-top-small shadow">
-        <svg class="icon icon-light">
-            <use xlink:href="{% static 'svg/sprites.svg' %}#it-arrow-up"></use>
-        </svg>
-    </a>
 {% endblock container %}
 <!-- end Container -->
-
-
 
 {% block extra_scripts %}
 {{ block.super }}

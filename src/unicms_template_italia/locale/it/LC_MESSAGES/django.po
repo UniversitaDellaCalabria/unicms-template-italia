@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-10 21:35+0100\n"
-"PO-Revision-Date: 2022-03-10 21:39+0100\n"
+"POT-Creation-Date: 2025-10-14 22:48+0200\n"
+"PO-Revision-Date: 2025-10-14 22:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -16,14 +16,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: settings.py:4
-msgid "Pre-Head"
+msgid "HTML Head"
 msgstr ""
 
 #: settings.py:5
-msgid "Head"
+msgid "HTML Bottom"
 msgstr ""
 
 #: settings.py:7
@@ -50,484 +50,538 @@ msgstr ""
 msgid "Slider-2"
 msgstr ""
 
-#: settings.py:15
-msgid "Pre-Footer"
-msgstr ""
-
 #: settings.py:16
-msgid "Footer"
-msgstr ""
-
-#: settings.py:17
-msgid "Post-Footer"
-msgstr ""
-
-#: settings.py:20
 msgid "Breadcrumbs"
 msgstr ""
 
-#: settings.py:25
+#: settings.py:21
 msgid "Section 1 - Top A"
 msgstr ""
 
-#: settings.py:26
+#: settings.py:22
 msgid "Section 1 - Top B"
 msgstr ""
 
-#: settings.py:27
+#: settings.py:23
 msgid "Section 1 - Top C"
 msgstr ""
 
-#: settings.py:28
+#: settings.py:24
 msgid "Section 1 - Middle Top A"
 msgstr ""
 
-#: settings.py:29
+#: settings.py:25
 msgid "Section 1 - Middle Top B"
 msgstr ""
 
-#: settings.py:30
+#: settings.py:26
 msgid "Section 1 - Middle Top C"
 msgstr ""
 
-#: settings.py:31
+#: settings.py:27
 msgid "Section 1 - Left A"
 msgstr ""
 
-#: settings.py:32
+#: settings.py:28
 msgid "Section 1 - Left B"
 msgstr ""
 
-#: settings.py:33
+#: settings.py:29
 msgid "Section 1 - Center Top A"
 msgstr ""
 
-#: settings.py:34
+#: settings.py:30
 msgid "Section 1 - Center Top B"
 msgstr ""
 
-#: settings.py:35
+#: settings.py:31
 msgid "Section 1 - Center Top C"
 msgstr ""
 
-#: settings.py:36
+#: settings.py:32
 msgid "Section 1 - Center Middle Top A"
 msgstr ""
 
-#: settings.py:37
+#: settings.py:33
 msgid "Section 1 - Center Middle Top B"
 msgstr ""
 
-#: settings.py:38
+#: settings.py:34
 msgid "Section 1 - Center Middle Top C"
 msgstr ""
 
-#: settings.py:39
+#: settings.py:35
 msgid "Section 1 - Center Content"
 msgstr ""
 
-#: settings.py:40
+#: settings.py:36
 msgid "Section 1 - Center Middle Bottom A"
 msgstr ""
 
-#: settings.py:41
+#: settings.py:37
 msgid "Section 1 - Center Middle Bottom B"
 msgstr ""
 
-#: settings.py:42
+#: settings.py:38
 msgid "Section 1 - Center Middle Bottom C"
 msgstr ""
 
-#: settings.py:43
+#: settings.py:39
 msgid "Section 1 - Center Bottom A"
 msgstr ""
 
-#: settings.py:44
+#: settings.py:40
 msgid "Section 1 - Center Bottom B"
 msgstr ""
 
-#: settings.py:45
+#: settings.py:41
 msgid "Section 1 - Center Bottom C"
 msgstr ""
 
-#: settings.py:46
+#: settings.py:42
 msgid "Section 1 - Right A"
 msgstr ""
 
-#: settings.py:47
+#: settings.py:43
 msgid "Section 1 - Right B"
 msgstr ""
 
-#: settings.py:48
+#: settings.py:44
 msgid "Section 1 - Middle Bottom A"
 msgstr ""
 
-#: settings.py:49
+#: settings.py:45
 msgid "Section 1 - Middle Bottom B"
 msgstr ""
 
-#: settings.py:50
+#: settings.py:46
 msgid "Section 1 - Middle Bottom C"
 msgstr ""
 
-#: settings.py:51
+#: settings.py:47
 msgid "Section 1 - Bottom A"
 msgstr ""
 
-#: settings.py:52
+#: settings.py:48
 msgid "Section 1 - Bottom B"
 msgstr ""
 
-#: settings.py:53
+#: settings.py:49
 msgid "Section 1 - Bottom C"
 msgstr ""
 
-#: settings.py:60
+#: settings.py:56
 msgid "Section 2 - Top A"
 msgstr ""
 
-#: settings.py:61
+#: settings.py:57
 msgid "Section 2 - Top B"
 msgstr ""
 
-#: settings.py:62
+#: settings.py:58
 msgid "Section 2 - Top C"
 msgstr ""
 
-#: settings.py:63
+#: settings.py:59
 msgid "Section 2 - Middle Top A"
 msgstr ""
 
-#: settings.py:64
+#: settings.py:60
 msgid "Section 2 - Middle Top B"
 msgstr ""
 
-#: settings.py:65
+#: settings.py:61
 msgid "Section 2 - Middle Top C"
 msgstr ""
 
-#: settings.py:66
+#: settings.py:62
 msgid "Section 2 - Left A"
 msgstr ""
 
-#: settings.py:67
+#: settings.py:63
 msgid "Section 2 - Left B"
 msgstr ""
 
-#: settings.py:68
+#: settings.py:64
 msgid "Section 2 - Center Top A"
 msgstr ""
 
-#: settings.py:69
+#: settings.py:65
 msgid "Section 2 - Center Top B"
 msgstr ""
 
-#: settings.py:70
+#: settings.py:66
 msgid "Section 2 - Center Top C"
 msgstr ""
 
-#: settings.py:71
+#: settings.py:67
 msgid "Section 2 - Center Middle Top A"
 msgstr ""
 
-#: settings.py:72
+#: settings.py:68
 msgid "Section 2 - Center Middle Top B"
 msgstr ""
 
-#: settings.py:73
+#: settings.py:69
 msgid "Section 2 - Center Middle Top C"
 msgstr ""
 
-#: settings.py:74
+#: settings.py:70
 msgid "Section 2 - Center Content"
 msgstr ""
 
-#: settings.py:75
+#: settings.py:71
 msgid "Section 2 - Center Middle Bottom A"
 msgstr ""
 
-#: settings.py:76
+#: settings.py:72
 msgid "Section 2 - Center Middle Bottom B"
 msgstr ""
 
-#: settings.py:77
+#: settings.py:73
 msgid "Section 2 - Center Middle Bottom C"
 msgstr ""
 
-#: settings.py:78
+#: settings.py:74
 msgid "Section 2 - Center Bottom A"
 msgstr ""
 
-#: settings.py:79
+#: settings.py:75
 msgid "Section 2 - Center Bottom B"
 msgstr ""
 
-#: settings.py:80
+#: settings.py:76
 msgid "Section 2 - Center Bottom C"
 msgstr ""
 
-#: settings.py:81
+#: settings.py:77
 msgid "Section 2 - Right A"
 msgstr ""
 
-#: settings.py:82
+#: settings.py:78
 msgid "Section 2 - Right B"
 msgstr ""
 
-#: settings.py:83
+#: settings.py:79
 msgid "Section 2 - Middle Bottom A"
 msgstr ""
 
-#: settings.py:84
+#: settings.py:80
 msgid "Section 2 - Middle Bottom B"
 msgstr ""
 
-#: settings.py:85
+#: settings.py:81
 msgid "Section 2 - Middle Bottom C"
 msgstr ""
 
-#: settings.py:86
+#: settings.py:82
 msgid "Section 2 - Bottom A"
 msgstr ""
 
-#: settings.py:87
+#: settings.py:83
 msgid "Section 2 - Bottom B"
 msgstr ""
 
-#: settings.py:88
+#: settings.py:84
 msgid "Section 2 - Bottom C"
 msgstr ""
 
-#: settings.py:94
+#: settings.py:90
 msgid "Section 3 - Top A"
 msgstr ""
 
-#: settings.py:95
+#: settings.py:91
 msgid "Section 3 - Top B"
 msgstr ""
 
-#: settings.py:96
+#: settings.py:92
 msgid "Section 3 - Top C"
 msgstr ""
 
-#: settings.py:97
+#: settings.py:93
 msgid "Section 3 - Middle Top A"
 msgstr ""
 
-#: settings.py:98
+#: settings.py:94
 msgid "Section 3 - Middle Top B"
 msgstr ""
 
-#: settings.py:99
+#: settings.py:95
 msgid "Section 3 - Middle Top C"
 msgstr ""
 
-#: settings.py:100
+#: settings.py:96
 msgid "Section 3 - Left A"
 msgstr ""
 
-#: settings.py:101
+#: settings.py:97
 msgid "Section 3 - Left B"
 msgstr ""
 
-#: settings.py:102
+#: settings.py:98
 msgid "Section 3 - Center Top A"
 msgstr ""
 
-#: settings.py:103
+#: settings.py:99
 msgid "Section 3 - Center Top B"
 msgstr ""
 
-#: settings.py:104
+#: settings.py:100
 msgid "Section 3 - Center Top C"
 msgstr ""
 
-#: settings.py:105
+#: settings.py:101
 msgid "Section 3 - Center Middle Top A"
 msgstr ""
 
-#: settings.py:106
+#: settings.py:102
 msgid "Section 3 - Center Middle Top B"
 msgstr ""
 
-#: settings.py:107
+#: settings.py:103
 msgid "Section 3 - Center Middle Top C"
 msgstr ""
 
-#: settings.py:108
+#: settings.py:104
 msgid "Section 3 - Center Content"
 msgstr ""
 
-#: settings.py:109
+#: settings.py:105
 msgid "Section 3 - Center Middle Bottom A"
 msgstr ""
 
-#: settings.py:110
+#: settings.py:106
 msgid "Section 3 - Center Middle Bottom B"
 msgstr ""
 
-#: settings.py:111
+#: settings.py:107
 msgid "Section 3 - Center Middle Bottom C"
 msgstr ""
 
-#: settings.py:112
+#: settings.py:108
 msgid "Section 3 - Center Bottom A"
 msgstr ""
 
-#: settings.py:113
+#: settings.py:109
 msgid "Section 3 - Center Bottom B"
 msgstr ""
 
-#: settings.py:114
+#: settings.py:110
 msgid "Section 3 - Center Bottom C"
 msgstr ""
 
-#: settings.py:115
+#: settings.py:111
 msgid "Section 3 - Right A"
 msgstr ""
 
-#: settings.py:116
+#: settings.py:112
 msgid "Section 3 - Right B"
 msgstr ""
 
-#: settings.py:117
+#: settings.py:113
 msgid "Section 3 - Middle Bottom A"
 msgstr ""
 
-#: settings.py:118
+#: settings.py:114
 msgid "Section 3 - Middle Bottom B"
 msgstr ""
 
-#: settings.py:119
+#: settings.py:115
 msgid "Section 3 - Middle Bottom C"
 msgstr ""
 
-#: settings.py:120
+#: settings.py:116
 msgid "Section 3 - Bottom A"
 msgstr ""
 
-#: settings.py:121
+#: settings.py:117
 msgid "Section 3 - Bottom B"
 msgstr ""
 
-#: settings.py:122
+#: settings.py:118
 msgid "Section 3 - Bottom C"
 msgstr ""
 
-#: templates/bases/unicms_italia.html:33
-msgid "uniCMS - Bootstrap Italia Django CMS"
+#: templates/bases/unicms_italia.html:60
+msgid "University of Calabria"
 msgstr ""
 
-#: templates/bases/unicms_italia.html:74
-#: templates/components/italia_editorialboard_frontend_menu.html:76
+#: templates/bases/unicms_italia.html:103
+#: templates/components/italia_editorialboard_frontend_menu.html:90
 msgid "Logout"
 msgstr "Esci"
 
-#: templates/bases/unicms_italia.html:78
+#: templates/bases/unicms_italia.html:107
 msgid "Login"
 msgstr "Accedi"
 
-#: templates/blocks/italia_menu_main.html:27
-msgid "close"
-msgstr "chiudi"
+#: templates/blocks/italia_cookie_consent.html:19
+msgid "Preference saved"
+msgstr "Preferenza salvata"
 
-#: templates/blocks/italia_search_engine.html:12
-#: templates/blocks/italia_search_engine.html:44
-#: templates/blocks/italia_search_engine.html:69
+#: templates/blocks/italia_cookie_consent.html:24
+msgid "Technical cookies"
+msgstr "Cookie tecnici"
+
+#: templates/blocks/italia_link_iframe.html:28
+msgid "Third Party Content"
+msgstr "Contenuto di terze parti"
+
+#: templates/blocks/italia_link_iframe.html:30
+msgid "To view content from the external source"
+msgstr "Per visualizzare il contenuto dalla fonte esterna"
+
+#: templates/blocks/italia_link_iframe.html:31
+msgid "link"
+msgstr ""
+
+#: templates/blocks/italia_link_iframe.html:31
+msgid "explicit consent is required"
+msgstr "è richiesto il consenso esplicito"
+
+#: templates/blocks/italia_link_iframe.html:34
+msgid "Accept cookies from"
+msgstr "Accetta cookie di"
+
+#: templates/blocks/italia_link_iframe.html:34
+msgid "to access the resource"
+msgstr "per accedere alla risorsa"
+
+#: templates/blocks/italia_link_iframe.html:37
+msgid "You can manage your preferences in the"
+msgstr "Puoi gestire le tue preferenze nella"
+
+#: templates/blocks/italia_link_iframe.html:42
+msgid "Remember my choice"
+msgstr "Ricorda la mia scelta"
+
+#: templates/blocks/italia_link_iframe.html:46
+msgid "Allow"
+msgstr "Consenti"
+
+#: templates/blocks/italia_menu_main.html:12
+msgid "Main menu"
+msgstr ""
+
+#: templates/blocks/italia_menu_main.html:17
+msgid "Show/Hide menu"
+msgstr "Mostra/Nascondi menu"
+
+#: templates/blocks/italia_menu_main.html:32
+msgid "Close"
+msgstr "Chiudi"
+
+#: templates/blocks/italia_search_engine.html:16
+#: templates/blocks/italia_search_engine.html:52
+#: templates/blocks/italia_search_engine.html:81
 msgid "Search"
 msgstr "Cerca"
 
-#: templates/blocks/italia_search_engine.html:31
+#: templates/blocks/italia_search_engine.html:35
 msgid "Words or \"phrases\""
 msgstr "Parole o \"frasi\""
 
-#: templates/blocks/italia_search_engine.html:56
+#: templates/blocks/italia_search_engine.html:64
 msgid "Tags"
 msgstr "Tag"
 
-#: templates/blocks/italia_search_engine.html:69
+#: templates/blocks/italia_search_engine.html:81
+#: templates/blocks/italia_search_engine.html:339
 msgid "tags"
 msgstr "tag"
 
-#: templates/blocks/italia_search_engine.html:84
+#: templates/blocks/italia_search_engine.html:97
 msgid "Advanced search"
 msgstr "Ricerca avanzata"
 
-#: templates/blocks/italia_search_engine.html:106
+#: templates/blocks/italia_search_engine.html:112
+#: templates/blocks/italia_search_engine.html:117
 msgid "From publishing date"
 msgstr "Dalla data di pubblicazione"
 
-#: templates/blocks/italia_search_engine.html:114
+#: templates/blocks/italia_search_engine.html:121
+#: templates/blocks/italia_search_engine.html:126
 msgid "To publishing date"
 msgstr "Alla data di pubblicazione"
 
-#: templates/blocks/italia_search_engine.html:127
+#: templates/blocks/italia_search_engine.html:137
 msgid "Category"
 msgstr "Categoria"
 
-#: templates/blocks/italia_search_engine.html:154
+#: templates/blocks/italia_search_engine.html:160
 msgid "Web Site"
 msgstr "Sito web"
 
-#: templates/blocks/italia_search_engine.html:247
+#: templates/blocks/italia_search_engine.html:263
 msgid "results"
 msgstr "risultati"
 
-#: templates/blocks/italia_search_engine.html:249
+#: templates/blocks/italia_search_engine.html:265
 msgid "pages"
 msgstr "pagine"
 
-#: templates/blocks/italia_search_engine.html:258
-#: templates/blocks/italia_search_engine.html:264
+#: templates/blocks/italia_search_engine.html:274
+#: templates/blocks/italia_search_engine.html:280
 msgid "Page"
 msgstr "Pagina"
 
-#: templates/blocks/italia_search_engine.html:258
+#: templates/blocks/italia_search_engine.html:274
 msgid "Previous"
 msgstr "Precedente"
 
-#: templates/blocks/italia_search_engine.html:264
+#: templates/blocks/italia_search_engine.html:280
 msgid "Next"
 msgstr "Successiva"
 
-#: templates/blocks/italia_search_engine.html:281
+#: templates/blocks/italia_search_engine.html:297
 msgid "Loading data"
 msgstr "Caricamento dati"
 
-#: templates/blocks/italia_search_engine.html:324
+#: templates/blocks/italia_search_engine.html:351
 msgid "Available on"
 msgstr "Disponibile su"
 
-#: templates/blocks/italia_search_engine.html:345
+#: templates/blocks/italia_search_engine.html:372
 msgid "Published in"
 msgstr "Pubblicata in"
 
-#: templates/components/italia_editorialboard_frontend_menu.html:19
+#: templates/components/italia_editorialboard_frontend_menu.html:22
 msgid "Hi"
 msgstr "Ciao"
 
-#: templates/components/italia_editorialboard_frontend_menu.html:36
+#: templates/components/italia_editorialboard_frontend_menu.html:40
 msgid "Editorial Board Backend"
 msgstr ""
 
-#: templates/components/italia_editorialboard_frontend_menu.html:43
+#: templates/components/italia_editorialboard_frontend_menu.html:50
+msgid "Add news in this webpath"
+msgstr ""
+
+#: templates/components/italia_editorialboard_frontend_menu.html:58
 msgid "Draft Mode"
 msgstr "Modalità bozza"
 
-#: templates/components/italia_editorialboard_frontend_menu.html:59
+#: templates/components/italia_editorialboard_frontend_menu.html:73
 msgid "Show/Hide blocks"
 msgstr "Mostra/Nascondi blocchi"
 
-#: templates/includes/social_share.html:17
-#: templates/includes/social_share.html:22
-#: templates/includes/social_share.html:28
-#: templates/includes/social_share.html:33
-#: templates/includes/social_share.html:39
-#: templates/includes/social_share.html:44
-#: templates/includes/social_share.html:50
-#: templates/includes/social_share.html:55
-#: templates/includes/social_share.html:61
-#: templates/includes/social_share.html:66
+#: templates/includes/edit_news.html:9
+#: templates/includes/edit_page_publication.html:9
+msgid "Edit"
+msgstr ""
+
+#: templates/includes/social_share.html:18
+#: templates/includes/social_share.html:23
+#: templates/includes/social_share.html:29
+#: templates/includes/social_share.html:34
+#: templates/includes/social_share.html:40
+#: templates/includes/social_share.html:45
+#: templates/includes/social_share.html:51
+#: templates/includes/social_share.html:56
+#: templates/includes/social_share.html:62
+#: templates/includes/social_share.html:67
+#: templates/includes/social_share.html:73
+#: templates/includes/social_share.html:78
 msgid "Share on"
 msgstr "Condividi su"
 

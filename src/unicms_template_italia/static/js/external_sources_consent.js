@@ -1,51 +1,48 @@
-function getConsents(consent_key) {
-    const consent = getCookie(consent_key);
-    const json_string = consent ? decodeURIComponent(consent) : '{}'
-    return JSON.parse(json_string);
-}
+const cookie_data = document.getElementById('unicms-cookie-data');
+const external_sources_consent_key = cookie_data.dataset.external_sources_consent_key;
+const external_sources_consent_key_expiration = cookie_data.dataset.external_sources_consent_key_expiration;
+const cookie_domain = cookie_data.dataset.cookie_domain;
 
-function editConsent(consent_key,
-                     host,
-                     expiration,
-                     cookie_domain,
-                     cookie_secure=0,
-                     revoke=false) {
-    if (host) {
-        const data = getConsents(consent_key);
-        if (!revoke) data[host] = Date.now() + expiration * 24 * 60 * 60 * 1000;
-        else data[host] = Date.now() - 1;
-        const consentStr = encodeURIComponent(JSON.stringify(data));
-        const secure_value = cookie_secure? 'Secure;' : '';
-        const expiration_value = expiration * 24 * 60 * 60;
-        document.cookie = `${consent_key}=${consentStr};domain=.unical.it;${secure_value}path=/;SameSite=Lax;max-age=${expiration_value}`;
-        getCookie(consent_key);
+
+function getConsents() {
+    const consent = getCookie();
+    try {
+        const json_string = consent ? decodeURIComponent(consent) : '{}';
+        return JSON.parse(json_string);
+    } catch {
+        return {};
     }
 }
 
-function hasConsent(consent_key, host) {
+function editConsent(host, revoke=false) {
+    if (host) {
+        const data = getConsents();
+        if (!revoke) data[host] = Date.now() + external_sources_consent_key_expiration * 24 * 60 * 60 * 1000;
+        else data[host] = Date.now() - 1;
+        const consentStr = encodeURIComponent(JSON.stringify(data));
+        const expiration_value = external_sources_consent_key_expiration * 24 * 60 * 60;
+        const secure_value = window.location.protocol === "https:" ? "Secure;" : "";
+        document.cookie = `${external_sources_consent_key}=${consentStr};domain=.unical.it;${secure_value}path=/;SameSite=Lax;max-age=${expiration_value}`;
+        getCookie();
+    }
+}
+
+function hasConsent(host) {
     if (!host) return false;
-    const data = getConsents(consent_key);
+    if (window.location.host.split(":")[0].endsWith(host)) return true;
+    const data = getConsents();
     return data[host] !== undefined && data[host] > Date.now();
 }
 
-//~ function revokeConsent(consent_key, host) {
-    //~ if (host) {
-        //~ const data = getConsents();
-        //~ delete data[host];
-        //~ localStorage.setItem(consent_key, JSON.stringify(data));
-    //~ }
-//~ }
-
-function getCookie(name) {
+function getCookie() {
     const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
+    const parts = value.split(`; ${external_sources_consent_key}=`);
     if (parts.length === 2) {
         const encoded_value = parts.pop().split(";").shift();
         return encoded_value;
     }
     return null;
 }
-
 
 function normalizeHost(urlString) {
     try {

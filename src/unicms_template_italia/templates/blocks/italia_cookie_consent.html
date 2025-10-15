@@ -7,7 +7,6 @@
 
 {% random_id uid as id %}
 
-{% settings_value "DEBUG" as debug %}
 {% settings_value "EXTERNAL_SOURCES_CONSENT_KEY" as external_sources_consent_key %}
 {% settings_value "EXTERNAL_SOURCES_CONSENT_KEY_EXPIRATION" as external_sources_consent_key_expiration %}
 {% settings_value "EXTERNAL_SOURCES_KNOWN_LIST" as external_sources_known_list %}
@@ -52,21 +51,17 @@ var {{ id }} = new Vue({
     data() {
         return {
             alert_show: false,
-            consents: getConsents("{{ external_sources_consent_key }}"),
+            consents: getConsents(),
             known_sources: {{ external_sources_known_list|safe }},
         }
     },
     methods: {
         checkConsent(host) {
-            return hasConsent("{{ external_sources_consent_key }}", host)
+            return hasConsent(host)
         },
         changeConsent(host) {
             editConsent(
-                consent_key="{{ external_sources_consent_key }}",
                 host=host,
-                expiration={{ external_sources_consent_key_expiration }},
-                cookie_domain="{{ cookie_domain }}",
-                cookie_secure={% if debug %}0{% else %}1{% endif %},
                 revoke=this.checkConsent(host)
             )
             this.alert_show = true

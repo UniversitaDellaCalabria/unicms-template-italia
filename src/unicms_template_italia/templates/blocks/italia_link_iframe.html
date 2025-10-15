@@ -7,11 +7,7 @@
 
 {% random_id uid as id %}
 
-{% settings_value "DEBUG" as debug %}
 {% settings_value "EXTERNAL_SOURCES_COOKIE_POLICY_URL" as external_sources_cookie_policy_url %}
-{% settings_value "EXTERNAL_SOURCES_CONSENT_KEY" as external_sources_consent_key %}
-{% settings_value "EXTERNAL_SOURCES_CONSENT_KEY_EXPIRATION" as external_sources_consent_key_expiration %}
-{% settings_value "MAIN_DOMAIN" as cookie_domain %}
 
 
 <div id="{{ id }}">
@@ -54,7 +50,7 @@ var {{ id }} = new Vue({
     el: '#{{ id }}',
     data() {
         return {
-            has_consent: hasConsent("{{ external_sources_consent_key }}", normalizeHost("{{ url }}")) || normalizeHost("{{ url }}").includes("{{ cookie_domain }}"),
+            has_consent: hasConsent(normalizeHost("{{ url }}")),
             host: normalizeHost("{{ url }}"),
             permanent: false
         }
@@ -62,13 +58,7 @@ var {{ id }} = new Vue({
     methods: {
         addConsent() {
             this.has_consent = true
-            if(this.permanent) editConsent(
-                consent_key="{{ external_sources_consent_key }}",
-                host=this.host,
-                expiration={{ external_sources_consent_key_expiration }},
-                cookie_domain="{{ cookie_domain }}",
-                cookie_secure={% if debug %}0{% else %}1{% endif %},
-            )
+            if(this.permanent) editConsent(host=this.host)
         },
     }
 })

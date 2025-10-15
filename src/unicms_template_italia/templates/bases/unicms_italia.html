@@ -26,6 +26,18 @@
     {% block head_inits %}
         {% include "inits/vue-init.html" %}
         {% include "inits/owl-carousel-init.html" %}
+
+        {% settings_value "EXTERNAL_SOURCES_COOKIE_POLICY_URL" as external_sources_cookie_policy_url %}
+        {% settings_value "EXTERNAL_SOURCES_CONSENT_KEY" as external_sources_consent_key %}
+        {% settings_value "EXTERNAL_SOURCES_CONSENT_KEY_EXPIRATION" as external_sources_consent_key_expiration %}
+        {% settings_value "MAIN_DOMAIN" as cookie_domain %}
+
+        <div id="unicms-cookie-data" 
+            data-external_sources_cookie_policy_url="{{ external_sources_cookie_policy_url }}" 
+            data-external_sources_consent_key="{{ external_sources_consent_key }}"
+            data-external_sources_consent_key_expiration="{{ external_sources_consent_key_expiration }}"
+            data-cookie_domain="{{ cookie_domain }}">
+        </div>
         <script src="{% unicms_template_italia_static_path 'js/external_sources_consent.min.js' %}"></script>
     {% endblock head_inits %}
 

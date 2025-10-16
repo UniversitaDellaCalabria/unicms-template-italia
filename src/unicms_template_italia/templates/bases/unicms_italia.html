@@ -22,7 +22,7 @@
 <!-- Return to Agid native template -->
 {% block extra_head %}
     {{ block.super }}
-
+    
     {% block head_inits %}
         {% include "inits/vue-init.html" %}
         {% include "inits/owl-carousel-init.html" %}
@@ -32,19 +32,24 @@
         {% settings_value "EXTERNAL_SOURCES_CONSENT_KEY_EXPIRATION" as external_sources_consent_key_expiration %}
         {% settings_value "MAIN_DOMAIN" as cookie_domain %}
 
-        <div id="unicms-cookie-data" 
-            data-external_sources_cookie_policy_url="{{ external_sources_cookie_policy_url }}" 
-            data-external_sources_consent_key="{{ external_sources_consent_key }}"
-            data-external_sources_consent_key_expiration="{{ external_sources_consent_key_expiration }}"
-            data-cookie_domain="{{ cookie_domain }}">
-        </div>
+        <script id="unicms-cookie-data" type="application/json">
+        {
+          "external_sources_cookie_policy_url": "{{ external_sources_cookie_policy_url }}",
+          "external_sources_consent_key": "{{ external_sources_consent_key }}",
+          "external_sources_consent_key_expiration": "{{ external_sources_consent_key_expiration }}",
+          "cookie_domain": "{{ cookie_domain }}"
+        }
+        </script>
+        <script src="{% unicms_template_italia_static_path 'js/tldts.7.0.17.min.js' %}"></script>
         <script src="{% unicms_template_italia_static_path 'js/external_sources_consent.min.js' %}"></script>
     {% endblock head_inits %}
 
+    
+        
     {% block html_head %}
         {% load_blocks section="html-head" %}
     {% endblock html_head %}
-
+    
     {% block social_tags %}
     <meta property="og:url" content="{{ request.build_absolute_uri }}" />
     <meta property="og:type" content="article" />

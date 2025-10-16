@@ -50,7 +50,7 @@ var {{ id }} = new Vue({
     el: '#{{ id }}',
     data() {
         return {
-            has_consent: hasConsent(normalizeHost("{{ url }}")),
+            has_consent: hasConsent("{{ url }}"),
             host: normalizeHost("{{ url }}"),
             permanent: false
         }

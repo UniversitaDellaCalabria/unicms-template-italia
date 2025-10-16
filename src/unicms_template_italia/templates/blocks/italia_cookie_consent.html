@@ -30,7 +30,7 @@
         <div class="toggles">
             <label :for="'toggle-{{ id }}-' + source">
                 [[ source ]]
-                <input type="checkbox" :id="'toggle-{{ id }}-' + source" @change="changeConsent(source)" :checked="checkConsent(source)">
+                <input type="checkbox" :id="'toggle-{{ id }}-' + source" @change="changeConsent(source)" :checked="hasConsent(source)">
                 <span class="lever"></span>
             </label>
         </div>
@@ -39,7 +39,7 @@
         <div class="toggles">
             <label :for="'toggle-{{ id }}-' + key">
                 [[ key ]]
-                <input type="checkbox" :id="'toggle-{{ id }}-' + key" @change="changeConsent(key)"  :checked="checkConsent(key)">
+                <input type="checkbox" :id="'toggle-{{ id }}-' + key" @change="changeConsent(key)"  :checked="hasConsent(key)">
                 <span class="lever"></span>
             </label>
         </div>
@@ -51,23 +51,27 @@ var {{ id }} = new Vue({
     data() {
         return {
             alert_show: false,
+            alert_timer: null,
             consents: getConsents(),
             known_sources: {{ external_sources_known_list|safe }},
         }
     },
     methods: {
-        checkConsent(host) {
-            return hasConsent(host)
-        },
         changeConsent(host) {
             editConsent(
                 host=host,
-                revoke=this.checkConsent(host)
+                revoke=hasConsent(host)
             )
             this.alert_show = true
-            setTimeout(() => {
-                this.alert_show = false;
-            }, 3000);
+            if (this.alert_timer) {
+              clearTimeout(this.alert_timer)
+            }
+            this.alert_timer = setTimeout(
+                () => {
+                    this.alert_show = false
+                    this.alert_timer = null
+                }, 3000
+            );
         }
     }
 })

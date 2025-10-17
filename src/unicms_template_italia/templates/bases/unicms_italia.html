@@ -1336,27 +1336,30 @@ col-10 offset-2 col-lg-12 offset-lg-0
     {% endblock section_3 %}
     <!-- end Section 3 -->
 
-    <div class="it-cookie-modal">
-        <div class="modal" tabindex="-1" role="dialog" id="modalCookie" aria-labelledby="modalCookieTitle">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title h5 " id="modalCookieTitle">{% trans "Cookies consent management" %}</h2>
-                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Chiudi finestra modale">
-                            <svg class="icon">
-                                <use href="{% static 'svg/sprites.svg' %}#it-close"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                       {% include "blocks/italia_cookie_consent.html" %}
-                    </div>
+{% endblock container %}
+<!-- end Container -->
+
+{% block cookiebar %}
+<div class="it-cookie-modal">
+    <div class="modal" tabindex="-1" role="dialog" id="modalCookie" aria-labelledby="modalCookieTitle">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5 " id="modalCookieTitle">{% trans "Cookies consent management" %}</h2>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Chiudi finestra modale">
+                        <svg class="icon">
+                            <use href="{% static 'svg/sprites.svg' %}#it-close"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                   {% include "blocks/italia_cookie_consent.html" %}
                 </div>
             </div>
         </div>
     </div>
-{% endblock container %}
-<!-- end Container -->
+</div>
+{% endblock cookiebar %}
 
 {% block extra_scripts %}
 {{ block.super }}

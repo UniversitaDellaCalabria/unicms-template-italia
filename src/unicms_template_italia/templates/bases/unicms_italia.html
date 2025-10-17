@@ -22,7 +22,7 @@
 <!-- Return to Agid native template -->
 {% block extra_head %}
     {{ block.super }}
-    
+
     {% block head_inits %}
         {% include "inits/vue-init.html" %}
         {% include "inits/owl-carousel-init.html" %}
@@ -44,12 +44,10 @@
         <script src="{% unicms_template_italia_static_path 'js/external_sources_consent.min.js' %}"></script>
     {% endblock head_inits %}
 
-    
-        
     {% block html_head %}
         {% load_blocks section="html-head" %}
     {% endblock html_head %}
-    
+
     {% block social_tags %}
     <meta property="og:url" content="{{ request.build_absolute_uri }}" />
     <meta property="og:type" content="article" />
@@ -1337,6 +1335,26 @@ col-10 offset-2 col-lg-12 offset-lg-0
     {% endif %}
     {% endblock section_3 %}
     <!-- end Section 3 -->
+
+    <div class="it-cookie-modal">
+        <div class="modal" tabindex="-1" role="dialog" id="modalCookie" aria-labelledby="modalCookieTitle">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title h5 " id="modalCookieTitle">{% trans "Cookies consent management" %}</h2>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Chiudi finestra modale">
+                            <svg class="icon">
+                                <use href="{% static 'svg/sprites.svg' %}#it-close"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                       {% include "blocks/italia_cookie_consent.html" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock container %}
 <!-- end Container -->
 

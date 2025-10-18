@@ -14,8 +14,13 @@
 
 
 <div id="{{ id }}">
+    <p>
+        {% trans "This site uses essential cookies to function properly and, if you wish, to improve your experience. Choose which ones to enable." %}
+        <br>
+        {% trans "The change will take effect after you reload the page or open a new one." %}
+    </p>
     <div class="alert alert-success" role="alert" v-if="alert_show">
-        {% trans "Preference saved" %}
+        {% trans "Preference saved for" %} <b>[[ alert_host ]]</b>.
     </div>
     <div class="form-check">
         <div class="toggles">
@@ -52,6 +57,7 @@ var {{ id }} = new Vue({
         return {
             alert_show: false,
             alert_timer: null,
+            alert_host: null,
             consents: getConsents(),
             known_sources: {{ external_sources_known_list|safe }},
         }
@@ -63,6 +69,7 @@ var {{ id }} = new Vue({
                 revoke=hasConsent(host)
             )
             this.alert_show = true
+            this.alert_host = host
             if (this.alert_timer) {
               clearTimeout(this.alert_timer)
             }
@@ -70,6 +77,7 @@ var {{ id }} = new Vue({
                 () => {
                     this.alert_show = false
                     this.alert_timer = null
+                    this.alert_host = null
                 }, 3000
             );
         }

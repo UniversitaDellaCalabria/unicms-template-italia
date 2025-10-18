@@ -134,7 +134,7 @@ PINTEREST_ENDPOINT = 'https://www.pinterest.com/pin/create/button/?url='
 
 # CDN FOR STATICS
 UNICMS_TEMPLATE_ITALIA_USE_CDN = False
-UNICMS_TEMPLATE_ITALIA_CDN = 'https://cdn.jsdelivr.net/gh/UniversitaDellaCalabria/unicms-template-italia@1.4.5/src/unicms_template_italia/static'
+UNICMS_TEMPLATE_ITALIA_CDN = 'https://cdn.jsdelivr.net/gh/UniversitaDellaCalabria/unicms-template-italia@1.4.6/src/unicms_template_italia/static'
 
 EXTERNAL_SOURCES_CONSENT_KEY = 'unicms_external_sources_consent'
 EXTERNAL_SOURCES_CONSENT_KEY_EXPIRATION = 365 # days

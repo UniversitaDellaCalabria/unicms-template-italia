@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-17 10:36+0200\n"
-"PO-Revision-Date: 2025-10-17 10:37+0200\n"
+"POT-Creation-Date: 2025-10-18 10:53+0200\n"
+"PO-Revision-Date: 2025-10-18 10:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -415,15 +415,30 @@ msgstr "Esci"
 msgid "Login"
 msgstr "Accedi"
 
-#: templates/bases/unicms_italia.html:1344
+#: templates/bases/unicms_italia.html:1348
 msgid "Cookies consent management"
 msgstr "Gestione del consenso sui cookie"
 
 #: templates/blocks/italia_cookie_consent.html:18
-msgid "Preference saved"
-msgstr "Preferenza salvata"
+msgid ""
+"This site uses essential cookies to function properly and, if you wish, to "
+"improve your experience. Choose which ones to enable."
+msgstr ""
+"Questo sito usa cookie essenziali per funzionare correttamente e, se lo "
+"desideri, anche per migliorare la tua esperienza. Scegli quali attivare."
+
+#: templates/blocks/italia_cookie_consent.html:20
+msgid ""
+"The change will take effect after you reload the page or open a new one."
+msgstr ""
+"La modifica avrà effetto dopo aver ricaricato la pagina o averne aperta "
+"una nuova."
 
 #: templates/blocks/italia_cookie_consent.html:23
+msgid "Preference saved for"
+msgstr "Preferenza salvata per"
+
+#: templates/blocks/italia_cookie_consent.html:28
 msgid "Technical cookies"
 msgstr "Cookie tecnici"
 

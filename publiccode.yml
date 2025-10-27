@@ -39,7 +39,7 @@ description:
       provided by AgID for the web.
 
       The entire code is open source and therefore licensed under
-      the 3-Clause BSD License.
+      the GNU Affero General Public License.
     shortDescription: >-
       Bootstrap Italia template for uniCMS
 developmentStatus: stable
@@ -70,7 +70,7 @@ landingURL: 'https://github.com/UniversitaDellaCalabria/unicms-template-italia'
 legal:
   authorsFile: >-
     https://github.com/UniversitaDellaCalabria/unicms-template-italia/blob/main/AUTHORS
-  license: BSD-3-Clause
+  license: AGPL-3.0-or-later
   mainCopyrightOwner: Università della Calabria
 localisation:
   availableLanguages:
@@ -91,7 +91,7 @@ platforms:
 releaseDate: '2025-10-27'
 roadmap: 'https://github.com/UniversitaDellaCalabria/unicms-template-italia/issues'
 softwareType: standalone/web
-softwareVersion: v1.4.9
+softwareVersion: v1.4.10
 url: 'https://github.com/UniversitaDellaCalabria/unicms-template-italia'
 usedBy:
   - Università della Calabria - https://www.unical.it

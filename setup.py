@@ -17,7 +17,7 @@ PKG_NAME = 'unicms_template_italia'
 
 setup(
     name=PKG_NAME,
-    version='1.4.9',
+    version='1.4.10',
 
     packages=[PKG_NAME],
     package_dir={PKG_NAME: f"{SRC_FOLDER}/{PKG_NAME}"},
@@ -27,7 +27,7 @@ setup(
                                                  recursive=True)]
     },
 
-    license='BSD-3-Clause',
+    license='AGPL-3.0-or-later',
     description="uniCMS Template based on Bootstrap Italia design",
     long_description=README,
     long_description_content_type='text/markdown',
@@ -40,7 +40,7 @@ setup(
         'Framework :: Django :: 4.0',
         'Framework :: Django :: 5.0',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: 3-Clause BSD License',
+        'License :: OSI Approved :: GNU Affero General Public License v3 (AGPLv3)',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',

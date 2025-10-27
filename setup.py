@@ -27,7 +27,7 @@ setup(
                                                  recursive=True)]
     },
 
-    license='Apache License 2.0',
+    license='BSD-3-Clause',
     description="uniCMS Template based on Bootstrap Italia design",
     long_description=README,
     long_description_content_type='text/markdown',
@@ -40,7 +40,7 @@ setup(
         'Framework :: Django :: 4.0',
         'Framework :: Django :: 5.0',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache Software License',
+        'License :: OSI Approved :: 3-Clause BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',

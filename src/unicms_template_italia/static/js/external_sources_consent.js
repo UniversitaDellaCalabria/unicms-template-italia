@@ -36,13 +36,16 @@ function getConsents() {
     }
 }
 
-function editConsent(host, revoke=false) {
+function editConsent(host, revoke=false, explicit=true) {
     if (!host) return;
     const norm_host = normalizeHost(host)
     const main_domain = normalizeHost(window.location.host)
     const data = getConsents();
-    if (!revoke) data[norm_host] = Date.now() + external_sources_consent_key_expiration * 24 * 60 * 60 * 1000;
-    else data[norm_host] = Date.now() - 1;
+    if (explicit) {
+        if (!revoke) data[norm_host] = Date.now() + external_sources_consent_key_expiration * 24 * 60 * 60 * 1000;
+        else data[norm_host] = new Date(0);
+    }
+    else if (!Object.hasOwn(data, norm_host)) data[norm_host] = new Date(0);
     const consentStr = encodeURIComponent(JSON.stringify(data));
     const expiration_value = external_sources_consent_key_expiration * 24 * 60 * 60;
     const secure_value = window.location.protocol === "https:" ? "Secure;" : "";

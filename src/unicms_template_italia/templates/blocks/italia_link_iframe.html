@@ -58,6 +58,9 @@ var {{ id }} = new Vue({
             permanent: false
         }
     },
+    mounted() {
+        editConsent(host=this.host, revoke=false, explicit=false)
+    },
     methods: {
         addConsent() {
             this.has_consent = true

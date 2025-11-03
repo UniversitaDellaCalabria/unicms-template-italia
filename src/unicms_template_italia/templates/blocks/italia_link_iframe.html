@@ -16,11 +16,10 @@
                 src="{{ url }}"
                 allowfullscreen
                 loading="lazy"
-                {% if url|slice:"-4:" == ".pdf" %}
-                sandbox
-                {% else %}
-                sandbox="allow-scripts allow-same-origin allow-popups allow-presentation">
+                {% if url|lower|slice:"-4:" != ".pdf" %}
+                sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"
                 {% endif %}
+                >
         </iframe>
     </div>
     <div v-else>

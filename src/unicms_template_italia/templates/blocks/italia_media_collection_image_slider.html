@@ -26,18 +26,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 <script>
 $(document).ready(function() {
-  $("#carousel-{{id}}").owlCarousel({
-    loop: true,
+  let carousel = $("#carousel-{{id}}");
+  let itemCount = carousel.find('.card-wrapper').length;
+
+  // items visibili per breakpoint
+  let itemsXs = 1;   // sotto 600px
+  let itemsLg = 3;   // sopra 600px
+
+  let windowWidth = $(window).width();
+  let visible = windowWidth < 600 ? itemsXs : itemsLg;
+  
+  carousel.owlCarousel({
+    loop: itemCount > visible,
     margin: 10,
     dots: true,
     autoHeight: true,
     lazyLoad:true,
     responsive:{
         0:{
-            items:1
+            items:itemsXs
         },
         600:{
-            items:3
+            items:itemsLg
         },
     }
   });

@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load unicms_templates %}
 
 {% random_id as id %}
@@ -68,6 +69,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     splide.mount();
+
+    document.querySelector('.splide__arrow--next').setAttribute('data-hover', "{% trans 'Next' %}");
+    document.querySelector('.splide__arrow--prev').setAttribute('data-hover', "{% trans 'Previous' %}");
 });
 </script>
 {% endif %}

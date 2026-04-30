@@ -25,9 +25,9 @@ function getConsents() {
         const data = JSON.parse(json_string);
         const to_delete = [];
         for (const host in data) {
-            if (!normalizeHost(host)) to_delete.push(key);
+            if (!normalizeHost(host)) to_delete.push(host);
         }
-        for (const del in to_delete) {
+        for (const del of to_delete) {
             delete data[del];
         }
         return data;

@@ -50,8 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var splide = new Splide('#carousel-{{ id }}', {
         type: itemCount > visibleIniziali ? 'loop' : 'slide',
         perPage: itemsLg,
-        arrows     : false, // Nasconde le frecce (prev/next)
-        pagination : true, // Nasconde i puntini (bullets)
+        //~ autoHeight: true,
+        arrows     : true, // Nasconde le frecce (prev/next)
+        pagination : false, // Nasconde i puntini (bullets)
         gap    : '12px', // Spaziatura tipica Bootstrap Italia
         lazyLoad: 'nearby',
         breakpoints: {

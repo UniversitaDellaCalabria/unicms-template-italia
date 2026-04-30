@@ -24,6 +24,8 @@
     {{ block.super }}
 
     {% block head_inits %}
+        <script src="{% unicms_template_italia_static_path 'js/jquery.4.0.0.min.js' %}"></script>
+        
         {% include "inits/vue-init.html" %}
         {% include "inits/splide-init.html" %}
 

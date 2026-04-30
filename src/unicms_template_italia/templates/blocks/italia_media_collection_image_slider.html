@@ -5,53 +5,68 @@
 {% if collection.get_items %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 
-<div id="carousel-{{id}}" class="owl-carousel it-carousel-wrapper">
-    {% for item in collection.get_items %}
-        <div class="card-wrapper">
-            <div class="card card-img no-after">
-                <div class="img-responsive-wrapper">
-                    <div class="img-responsive">
-                        <a href="{{ item.media.get_media_path }}" data-lightbox="{{ id }}_gallery" aria-label="{{ item.media.title }}">
-                            <img src="{{ item.media.get_media_path }}"
-                                 title="{{ item.media.title }}"
-                                 alt="{{ item.media.description }}">
-                        </a>
+<div id="carousel-{{id}}" class="splide it-carousel-wrapper">
+    <div class="splide__track">
+        <ul class="splide__list">
+            {% for item in collection.get_items %}
+            <li class="splide__slide">
+                <div class="it-single-slide-wrapper h-100">
+                    <div class="card-wrapper h-100">
+                        <div class="card card-img no-after">
+                            <div class="img-responsive-wrapper">
+                                <div class="img-responsive">
+                                    <a href="{{ item.media.get_media_path }}" data-lightbox="{{ id }}_gallery" aria-label="{{ item.media.title }}">
+                                        <img class="splide__lazy"
+                                             data-splide-lazy="{{ item.media.get_media_path }}"
+                                             title="{{ item.media.title }}"
+                                             alt="{{ item.media.description }}">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    {% endfor %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
 <script>
-$(document).ready(function() {
-  let carousel = $("#carousel-{{id}}");
-  let itemCount = carousel.find('.card-wrapper').length;
+document.addEventListener('DOMContentLoaded', function () {
+    const el = document.querySelector('#carousel-{{ id }}', {
+    // Conta le slide effettive
+    const itemCount = el.querySelectorAll('.splide__slide').length;
 
-  // items visibili per breakpoint
-  let itemsXs = 1;   // sotto 600px
-  let itemsLg = 3;   // sopra 600px
+    // Definiamo i breakpoint
+    const itemsXs = 1;
+    const itemsLg = 3;
 
-  let windowWidth = $(window).width();
-  let visible = windowWidth < 600 ? itemsXs : itemsLg;
-  
-  carousel.owlCarousel({
-    loop: itemCount > visible,
-    margin: 10,
-    dots: true,
-    autoHeight: true,
-    lazyLoad:true,
-    responsive:{
-        0:{
-            items:itemsXs
+    const windowWidth = window.innerWidth;
+    const visibleIniziali = windowWidth < 600 ? itemsXs : itemsLg;
+    
+    var splide = new Splide('#carousel-{{ id }}', {
+        type: itemCount > visibleIniziali ? 'loop' : 'slide',
+        perPage: itemsLg,
+        arrows     : false, // Nasconde le frecce (prev/next)
+        pagination : true, // Nasconde i puntini (bullets)
+        gap    : '12px', // Spaziatura tipica Bootstrap Italia
+        lazyLoad: 'nearby',
+        breakpoints: {
+          600: {
+            perPage: itemsXs,
+          },
         },
-        600:{
-            items:itemsLg
+        // Classi per integrare lo stile Bootstrap Italia se necessario
+        classes: {
+            arrows: 'splide__arrows it-test-class', 
+            arrow : 'splide__arrow it-arrow-custom',
         },
-    }
-  });
+    });
+
+    splide.mount();
 });
 </script>
-
 {% endif %}

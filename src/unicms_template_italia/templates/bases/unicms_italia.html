@@ -25,7 +25,7 @@
 
     {% block head_inits %}
         {% include "inits/vue-init.html" %}
-        {% include "inits/owl-carousel-init.html" %}
+        {% include "inits/splide-init.html" %}
 
         {% settings_value "EXTERNAL_SOURCES_COOKIE_POLICY_URL" as external_sources_cookie_policy_url %}
         {% settings_value "EXTERNAL_SOURCES_CONSENT_KEY" as external_sources_consent_key %}
@@ -1363,7 +1363,6 @@ col-10 offset-2 col-lg-12 offset-lg-0
 
 {% block extra_scripts %}
 {{ block.super }}
-<script src="{% unicms_template_italia_static_path 'js/passive_listeners.js' %}"></script>
 <script src="{% unicms_template_italia_static_path 'js/deferred_iframe_src.js' %}"></script>
 {% settings_value "CMS_PATH_PREFIX" as cms_path_prefix %}
 {% include "inits/search-input-handler.html" with cms_path_prefix=cms_path_prefix %}

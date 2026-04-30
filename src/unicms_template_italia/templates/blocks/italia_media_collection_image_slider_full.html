@@ -5,30 +5,47 @@
 {% if collection.get_items %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 
-<div id="carousel-{{id}}" class="owl-carousel it-carousel-wrapper">
-    {% for item in collection.get_items %}
-    <div class="item">
-        <a href="{{ item.media.get_media_path }}" data-lightbox="{{ id }}_gallery" aria-label="{{ item.media.title }}">
-            <img src="{{ item.media.get_media_path }}"
-                 title="{{ item.media.title }}"
-                 alt="{{ item.media.description }}"
-                 class="w-100 h-auto d-block">
-        </a>
+<div id="carousel-{{id}}" class="splide it-carousel-wrapper">
+    <div class="splide__track">
+        <ul class="splide__list">
+            {% for item in collection.get_items %}
+            <li class="splide__slide">
+                <div class="it-single-slide-wrapper h-100">
+                    <div class="item h-100">
+                        <a href="{{ item.media.get_media_path }}" data-lightbox="{{ id }}_gallery" aria-label="{{ item.media.title }}">
+                            <img class="splide__lazy"
+                                 data-splide-lazy="{{ item.media.get_media_path }}"
+                                 title="{{ item.media.title }}"
+                                 alt="{{ item.media.description }}"
+                                 class="w-100 h-auto d-block">
+                        </a>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
-    {% endfor %}
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
 <script>
-$(document).ready(function() {
-  $("#carousel-{{id}}").owlCarousel({
-    loop: true,
-    margin: 10,
-    dots: true,
-    items: 1,
-    autoHeight: true,
-    lazyLoad:true,
-  });
+document.addEventListener('DOMContentLoaded', function () {
+    var splide = new Splide('#carousel-{{ id }}', {
+        type   : 'loop',
+        perPage: {{ carousel_items }},
+        arrows     : false, // Nasconde le frecce (prev/next)
+        pagination : false, // Nasconde i puntini (bullets)
+        gap    : '12px', // Spaziatura tipica Bootstrap Italia
+        lazyLoad: 'nearby',
+        // Classi per integrare lo stile Bootstrap Italia se necessario
+        classes: {
+            arrows: 'splide__arrows it-test-class', 
+            arrow : 'splide__arrow it-arrow-custom',
+        },
+    });
+
+    splide.mount();
 });
 </script>
 {% endif %}

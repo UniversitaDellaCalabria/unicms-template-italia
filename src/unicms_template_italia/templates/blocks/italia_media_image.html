@@ -1,10 +1,17 @@
+{% if not url %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+{% endif %}
+
 <div class="card-wrapper card-space h-auto d-block">
     {% if url %}
     <a href="{{ url }}">
+    {% else %}
+    <a href="{{ media.get_media_path }}" data-lightbox="media_{{ media.pk }}" aria-label="{{ media.title }}">
     {% endif %}
     <img src="{{ media.get_media_path }}" class="w-100" alt="{{ media.description }}" title="{{ media.title }}" />
-    {% if url %}
     </a>
-    {% endif %}
 </div>
 
+{% if not url %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+{% endif %}
